@@ -1,8 +1,9 @@
-# Chain of Responsibility. Done Right.
+# Chain of Responsibility
 
 ## Pattern Overview
 
-The Chain of Responsibility is an original "Gang of Four" behavior pattern. It's main purpose is to allow for an operation to occur with out the individual steps having any knowledge of any other step involved.
+<!-- Insert links for pattern and books -->
+The Chain of Responsibility is an original "Gang of Four" behavior pattern. It's main purpose is to allow for an operation to occur without the individual steps having any knowledge of any other step involved.
 
 ## Problem Statement
 
@@ -57,7 +58,7 @@ public class ThirdService : IThirdService
 
 The interface definitions for these classes are inconsequential.
 
-The problem with chaining these operations becomes apparent when with unit and integration testing. You will see that in order to unit test the first service, we end up having to inject mocks.
+The problem with chaining these operations becomes apparent with unit and integration testing. You will see that in order to unit test the first service, we end up having to inject mocks.
 
 > **Note**: I am using the Moq testing library in these code examples.
 
@@ -88,7 +89,7 @@ public class FirstServiceUnitTests
 }
 ```
 
-In our unit test, we mocked the second service and returned the widget passed to it to verify that state was correct. The first issue the Chain of Responsibility would solve is the need for the mock in the first place.
+In our unit test, we mocked the second service and returned the widget passed to it, to verify that state was correct. The first issue the Chain of Responsibility would solve is the need for the mock in the first place.
 
 > **Note**: This is without any other dependencies like factories or repositories you may need to inject. The amount of mocking with code like this can be very tedious.
 
