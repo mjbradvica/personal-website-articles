@@ -304,6 +304,7 @@ public class WidgetChainFactory : IChainFactory<Widget>
     // }
     public IChainHandler<Widget> CreateChain()
     {
+        //Inject needed dependencies
         return new FirstChainHandler(new SecondChainHandler(new ThirdChainHandler(null)));
     }
 }
