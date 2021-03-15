@@ -2,8 +2,7 @@
 
 ## Pattern Overview
 
-<!-- Insert links for pattern and books -->
-The [Chain of Responsibility](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern) is an original "Gang of Four" behavior pattern. It's main purpose is to allow for an operation to occur without the individual steps having any knowledge of any other step involved.
+The [Chain of Responsibility](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern) is an original "Gang of Four" pattern that solves chained function calls. It's main purpose is to allow for an operation to occur without the individual steps having any knowledge of any other step involved.
 
 ## Problem Statement
 
@@ -58,7 +57,7 @@ public class ThirdService : IThirdService
 
 The interface definitions for these classes are inconsequential.
 
-The problem with chaining these operations becomes apparent with unit and integration testing. You will see that in order to unit test the first service, we end up having to inject mocks.
+The problem with chaining these operations becomes apparent with unit testing and integration testing. In order to unit test any service, we must inject mocks.
 
 > **Note**: I am using the Moq testing library in these code examples.
 
@@ -114,11 +113,11 @@ public class FirstServiceIntegrationTests
 }
 ```
 
-In our integration test, you can see we need to manually create every dependency and inject them. There are ways you can remedy this. But the problem is clear that in order to do integration testing for the first service, we need to deal with the hassle of all its dependencies. Chain of Responsibility removes the need to bring along unnecessary dependencies when we are testing an individual service.
+In the integration test, we need to manually create every dependency and inject them. The problem is clear that in order to do integration testing for the first service, we need to deal with the hassle of all its dependencies. Chain of Responsibility removes the need to bring along unnecessary dependencies when we are testing an individual service.
 
 ## My Issue With Current Examples
 
-My issue with many examples for this pattern is that the creation of the chain is not encapsulated and the example are not shown with dependency injection in mind. You will see in the following examples how this plays out.
+My issue with many examples for this pattern is that the creation of the chain is not encapsulated and the examples are not shown with dependency injection in mind.
 
 ### Base Code
 
@@ -256,11 +255,20 @@ The main issue occurs of when we try to create and initiate our chain.
 ```csharp
 public class BadChainCreationHandler
 {
-    // IFirstChainDependency;
-    // ISecondChainDependency;
-    // IThirdChainDependency;
+    // private readonly IFirstDependency _firstDependency;
+    // private readonly ISecondDependency _secondDependency;
+    // private readonly IThirdDependency _thirdDependency;
+
+    // public BadChainCreationHandler(IFirstDependency firstDependency, ISecondDependency secondDependency, IThirdDependency thirdDependency)
+    // {
+    //     _firstDependency = firstDependency;
+    //     _secondDependency = secondDependency;
+    //     _thirdDependency = thirdDependency;
+    // }
+
     public async Task<Widget> Handle(Widget widget)
     {
+        //Inject needed dependencies
         var handlerChain = new FirstChainHandler(new SecondChainHandler(new ThirdChainHandler(null)));
 
         return await handlerChain.Handle(widget);
@@ -268,7 +276,7 @@ public class BadChainCreationHandler
 }
 ```
 
-The root of my gripe with most examples becomes apparent. Our code breaks SRP by being concerned with how the chain is created. We don't want to know the details of our chain. We just want to call a method and be done with it.
+The code above breaks SRP by being concerned with how the chain is created. We don't want to know the details of our chain. We just want to call a method and be done with it.
 
 What we need is a factory that is responsible for the sole creation of our chain.
 
@@ -284,9 +292,16 @@ public interface IChainFactory<T>
 ```csharp
 public class WidgetChainFactory : IChainFactory<Widget>
 {
-    // IFirstChainDependency;
-    // ISecondChainDependency;
-    // IThirdChainDependency;
+    // private readonly IFirstDependency _firstDependency;
+    // private readonly ISecondDependency _secondDependency;
+    // private readonly IThirdDependency _thirdDependency;
+
+    // public WidgetChainFactory(IFirstDependency firstDependency, ISecondDependency secondDependency, IThirdDependency thirdDependency)
+    // {
+    //     _firstDependency = firstDependency;
+    //     _secondDependency = secondDependency;
+    //     _thirdDependency = thirdDependency;
+    // }
     public IChainHandler<Widget> CreateChain()
     {
         return new FirstChainHandler(new SecondChainHandler(new ThirdChainHandler(null)));
@@ -294,9 +309,9 @@ public class WidgetChainFactory : IChainFactory<Widget>
 }
 ```
 
-> **Note**: You can't use dependency injection for each handler because they all have the same signature of IChainHandler of type T. This is why they need to be instantiated manually.
+> **Note**: You can not use dependency injection for each handler because they all have the same signature of IChainHandler of type T. This is why each handler needs to be instantiated manually.
 
-With our new widget chain factory, we have shifted the responsibility from the handler to create the chain to a factory. Our new handler now looks like this.
+With our new widget chain factory, we have shifted the responsibility to create the chain from the handler to our factory. Our new handler now looks like this.
 
 ```csharp
 public class GoodChainCreationHandler
@@ -321,7 +336,7 @@ Our new handler now has zero knowledge of how our chain is created or how long i
 
 ### Other Things To Remember
 
-Considering using the command pattern as the type parameter for your chains. So instead of "Widget", it may be "CreateWidget" or "ShipWidget". You would then have an IChainFactory of type CreateWidget or IChainFactory of type ShipWidget. This will allow for you to create similar chains for the same object.
+You should consider using the command pattern as the type parameter for your chains. So instead of "Widget," it may be "CreateWidget" or "ShipWidget." You would then have an IChainFactory of type CreateWidget or IChainFactory of type ShipWidget. This will allow for you to create similar chains for the same object.
 
 You can reuse the IChainHandler interface to create a base handler that has logging or exception handling built in. This would further reduce the amount of testing required.
 
@@ -329,6 +344,8 @@ The examples I showed today only scratch the surface of what is possible. Rememb
 
 ## Conclusion
 
-The Chain of Responsibility pattern is one of the more underutilized behavior patterns. However it can become a wonderful tool in your engineering arsenal once one is aware of its potential.
+The Chain of Responsibility pattern is one of the more underutilized behavior patterns. However it can become a wonderful tool in your engineering arsenal once you are aware of its potential.
 
-The patterns main use it to decouple individual steps of long operations so that each step is only concerned with its scope of work. This allows for easier unit and integration testings with each step; and reusability among similar operations.
+The pattern's main use it to decouple individual steps of long operations so that each step is only concerned with its scope of work. This allows for easier unit testing and integration testing with each step, increasing reusability among similar operations.
+
+### Before And After
