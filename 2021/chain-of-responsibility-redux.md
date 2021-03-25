@@ -5,7 +5,7 @@ The [Chain of Responsibility](https://en.wikipedia.org/wiki/Chain-of-responsibil
 Unfortunately, many examples fail to show how to properly integrate the pattern into your application properly. You end up with bloated classes that look something like this.
 
 ```csharp
-public class BadChainCreationHandler : IRequestHandler
+public class BadChainCreationHandler : IRequestHandler<Widget>
 {
     private readonly IFirstDependency _firstDependency;
     private readonly ISecondDependency _secondDependency;
@@ -43,7 +43,7 @@ public interface IChainFactory<T>
 Our handler can now become...
 
 ```csharp
-public class GoodChainCreationHandler
+public class GoodChainCreationHandler : IRequestHandler<Widget>
 {
     private readonly IChainFactory<Widget> _chainFactory;
 
