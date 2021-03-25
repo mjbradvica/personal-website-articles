@@ -2,7 +2,7 @@
 
 The [Chain of Responsibility](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern) is an original "Gang of Four" pattern that solves chained function calls. It's main purpose is to allow for an operation to occur without the individual steps having any knowledge of any other step involved.
 
-Unfortunately, many examples fail to show how to properly integrate the pattern into your application properly. You end up with bloated classes that look something like this.
+Unfortunately, many examples fail to show how to properly integrate the pattern into your application. You end up with bloated classes that look something like this.
 
 ```csharp
 public class BadChainCreationHandler : IRequestHandler<Widget>
