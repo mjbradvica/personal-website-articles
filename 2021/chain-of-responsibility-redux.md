@@ -1,6 +1,6 @@
 # Chain of Responsibility adopted for Dependency Injection
 
-The [Chain of Responsibility](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern) is an original "Gang of Four" pattern that solves chained function calls. It's main purpose is to allow for an operation to occur without the individual steps having any knowledge of any other step involved.
+The [Chain of Responsibility](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern) is an original "Gang of Four" pattern that solves chained function calls. Its main purpose is to allow for an operation to occur without individual steps having any knowledge of any other step involved.
 
 Unfortunately, many examples fail to show how to properly integrate the pattern into your application. You end up with bloated classes that look something like this.
 
@@ -29,9 +29,9 @@ public class BadChainCreationHandler : IRequestHandler<Widget>
 }
 ```
 
-We have an application service level handler that does something with a fictitious widget object. The issue that that the handler is responsible for both the creation of the chain and its execution. In the spirit of SRP, the handler should not be aware of how the chain is created.
+We have an application service handler that does something with a fictitious widget object. The handler is responsible for both the creation of the chain and its execution. In the spirit of SRP, the handler should not be aware of how the chain is created.
 
-Our solution is quite simple, a factory.
+Our solution is quite simple: a factory!
 
 ```csharp
 public interface IChainFactory<T>
@@ -61,7 +61,7 @@ public class GoodChainCreationHandler : IRequestHandler<Widget>
 }
 ```
 
-And our factory is now responsible for the creation of our chain.
+Our factory is now responsible for the creation of our chain (and nothing else!).
 
 ```csharp
 public class WidgetChainFactory : IChainFactory<Widget>
@@ -88,4 +88,4 @@ public class WidgetChainFactory : IChainFactory<Widget>
 }
 ```
 
-Our factory is now only responsible for the creation aspect. And the handler is only responsible for starting the chain. Testing becomes easier since you have reduced the number of dependencies in your handler. And lastly, we have enforced consistency in the application. Keeping the creation of objects inside factories.
+The handler is responsible only for starting the chain. Testing becomes easier since you have reduced the number of dependencies in your handler. And, lastly, we have enforced consistency in the application by keeping the creation of objects inside our factories.
