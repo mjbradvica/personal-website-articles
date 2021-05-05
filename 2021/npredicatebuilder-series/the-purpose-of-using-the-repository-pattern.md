@@ -1,8 +1,8 @@
 # The Purpose of the Repository Pattern
 
-The Repository pattern has been around a long time. And while its purpose has shifted over the years. It still provides an easy way to constrain your data access code.
+The Repository Pattern is more than three decades old, While its purpose has shifted over the years, it still provides a simple solution to constrain your data access code.
 
-It's just an interface after all:
+The Repository Pattern is an interface:
 
 ```csharp
 public interface IWidgetRepository
@@ -15,25 +15,23 @@ public interface IWidgetRepository
 }
 ```
 
-Just implement the interface, inject when needed, and go.
+Implement the interface, inject where needed, and go.
 
-Notice I said interface. That's because this pattern does not imply any of the following: Dapper, ORM, EntityFramework, Unit of Work, SQL, DbSet, or LINQ.
+Notice, I said interface because this pattern does not imply any of the following: Dapper, ORM, EntityFramework, Unit of Work, SQL, DbSet, or LINQ.
 
-It's just a [Fascade](https://en.wikipedia.org/wiki/Facade_pattern) enforcing [Interface Segregation](https://en.wikipedia.org/wiki/Interface_segregation_principle).
+It's merely a [Fascade](https://en.wikipedia.org/wiki/Facade_pattern) enforcing [Interface Segregation](https://en.wikipedia.org/wiki/Interface_segregation_principle).
 
-Microservices, Service Layer, CQRS, DDD. None of that matters.
+Microservices, Service Layer, CQRS, DDD. None of these matter.
 
-## It constrains options
+## It Constrains Options
 
-What is a better engineered solution, three options or unlimited options?
+What is a better engineered solution: three options or unlimited options? I would argue that fewer options are always better.
 
-What do you believe will cause more bugs?
+More options equals more bugs and a higher rate of entropy.
 
-What do you believe will introduce more entropy into your solution?
+## It Makes Testing Easier
 
-## It makes testing easier
-
-Look at this application service level code:
+Check out this application service level code:
 
 ```csharp
 public async Task<Widget> FindWidget(Guid id)
@@ -51,10 +49,8 @@ public async Task<Widget> FindWidget(Guid id)
 }
 ```
 
-How do you test this code?
+How do you test this code? Repository. 1) Mock the method. 2) Assert the result.
 
-Repository, its rather easy. Mock the method. Assert the result.
+Raw disk, file, or database access. Good luck. Each of those options requieres multiple paragraphs in its own right.
 
-Raw disk, file, or database access. Good luck. Each of those options would require multiple paragraphs in their own right.
-
-Good software limits options. The Repository Pattern is no different in that it only provides what has been deemed necesary. Interface segregation in the purest form.
+Good software reduces options. The Repository Pattern is no different in that it only provides what has been deemed necesary--interface segregation in the purest form.
