@@ -49,8 +49,8 @@ public async Task<Widget> FindWidget(Guid id)
 }
 ```
 
-How do you test this code? Repository. 1) Mock the method. 2) Assert the result.
+How do you unit test this code? Repository. 1) Mock the method. 2) Assert the result.
 
-Raw disk, file, or database access. Good luck. Each of those options requieres multiple paragraphs in its own right.
+Raw disk, file, or database access. Good luck. Each of those options requires multiple paragraphs in its own right.
 
-Good software reduces options. The Repository Pattern is no different in that it only provides what has been deemed necesary--interface segregation in the purest form.
+Good software reduces options. The Repository Pattern is no different in that it only provides what has been deemed necessary--interface segregation in the purest form.
