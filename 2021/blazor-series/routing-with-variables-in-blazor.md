@@ -1,0 +1,1 @@
+@attribute [Route("string.bleh")] instead of @page
