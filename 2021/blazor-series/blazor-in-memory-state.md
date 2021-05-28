@@ -4,9 +4,9 @@ If you come from React, you may be aware of [Redux](https://redux.js.org/). A li
 
 How do you know I may need a state store?
 
-Do you have a component that needs to be notified about an event from a different component that may be dozens of level away in the render tree? That's where a state container may be applicable.
+Do you have a component that needs to hold a reference to a piece of state from a different component that may be dozens of level away in the render tree? That's where a state container may be applicable.
 
-Our state container will need a couple of pieces:
+Our state container will need a couple of pieces. If you have worked with Redux before this should feel familiar.
 
 A place to store the state of our application - Our Store
 
@@ -48,7 +48,7 @@ public interface IAction
 }
 ```
 
-Lets define some actions that will represent us increasing our decreasing the counter:
+Lets define some actions that will represent us increasing or decreasing the counter:
 
 ```csharp
 public class IncreaseCounter : IAction
@@ -109,7 +109,9 @@ public class StateStore
 }
 ```
 
-Our StateStore holds our InitialState, a dictionary of reducers, and a dispatch method.
+Our StateStore holds a reference to our applicats state source of truth. This is represented by a simple data bag we have named "InitialState". There is a single method called "Dispatch" which will accept and action which will be handled by our reducer dictionary. Our dictionary of types uses an object type as the key and an Action delete of type "IAction". When the correct object type is encountered, the function to update our state is triggered.
+
+Because we will inject our StateStore as a cascading parameter, every time the "InitialState" is updated, our application will respond to the updated state.
 
 **Adding our state container to the application**
 
