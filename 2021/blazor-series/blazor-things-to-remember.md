@@ -16,14 +16,6 @@ Blazor, and by extension WebAssembly are very new technologies that are swimming
 
 Blazor is not just a single type of application. It comes as a three pack with different hosting options. You have the option of choosing from a standard WebAssembly app. This is the closest to a traditional SPA application. The app is loaded into the browser and is executed via WebAssembly. A progressive web application where the user my physically download the application into their physical machine which may allow them to run the application with our without an internet connection. And finally, a ASP.NET Core hosted solution where the application is executed server-side and communicates to the browser via SignalR.
 
-The wonderful thing about all three options is that your code stays the same. Your decision is mostly concerned with how the application will be delivered to the client and their capabilities of having a constant connection.
-
-The default WebAssembly application are for end-users who you know have browsers that support WebAssembly.
-
-Choose a progressive web application when an end-user may need to use the application but may not have a constant connection or wants to run the application in a separate window.
-
-Choose a ASP.NET Core hosting solution when you need to support old browsers.
-
 4) Not embracing Component-based architecture
 
 Embracing Blazor means you are embracing a component-based architecture that puts composition as a first-class citizen. Blazor is very malleable in that it allows you to approach it in many different ways from an architecture standpoint. This does not give you the green light to attempt to shoehorn what you have done in the past with MVC or Razor Pages with Blazor and expect it to work. Every component should be able to live by itself, and still place nicely with others. Blazor may be state-ful, but components should be state-less when possible. This allows for easier testing and greater re-usability between components. In this aspect, Blazor is related to other component-based frameworks. If you are already comfortable with components in Vue, Angular, or React, you've already know the hardest part of Blazor.
