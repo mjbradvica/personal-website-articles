@@ -30,4 +30,4 @@ When faced with the possibility of having to use JavaScript interop:
 
 - Keep vigilant for third party developers' releasing native Blazor components
 
-Blazor is an ecosystem in itself. While JavaScript interop is doable, it is highly recommended that you stay away from it if possible. Use of JS interop is a last resort that should be approached with care and caution by your development team.
+Blazor is an ecosystem. While JavaScript interop is doable, it is highly recommended that you stay away from it if possible. Use of JS interop is a last resort that should be approached with care and caution by your development team.
