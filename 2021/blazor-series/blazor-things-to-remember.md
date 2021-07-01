@@ -1,12 +1,12 @@
-# Blazor Things To Remember
+# Blazor Things to Remember
 
 [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) is a wonderful new framework put forth by Microsoft as their entry into the WebAssembly development space. It allows us as developers to write responsive web applications in the language of our choice. Our code will be translated to native WebAssembly when we run our application. The biggest advantage to WebAssembly and Blazor is that it allows us to sidestep the short comings of JavaScript by using a fully-featured, type-safe language.
 
-Like many other new technologies, simply using Blazor is no silver bullet for development teams. If you are writing bad code in Angular, React, or Vue, migrating to Blazor won't suddenly solve all your problems. In some cases, it may just make them worse. When choosing to migrate or re-imagine an existing application in Blazor, here are some things to take note of before you commit to a new project:
+Like many other new technologies, simply using Blazor is no silver bullet for development teams. If you are writing bad code in Angular, React, or Vue, migrating to Blazor will not suddenly solve all your problems. In some cases, it may just make them worse. When choosing to migrate or re-imagine an existing application in Blazor, here are some things to take note of before you commit to a new project:
 
 1) Having zero or as little as possible JavaScript interop
 
-Blazor has the ability to interop with JavaScript both ways. Blazor can invoke JavaScript functions, and JavaScript can invoke Blazor. This is something that is required currently due to the shear amount of JavaScript libraries that exist. This should not be an excuse to use as many JavaScript libraries as possible. The whole point of WebAssembly in the first place is the avoid JavaScript as much as possible. It is understandable that there may be an edge case somewhere in your application for a certain time frame that will require interop. But it will not last forever. Getting away from JavaScript is the reason why you chose Blazor in the first place.
+Blazor can interop with JavaScript both ways. Blazor can invoke JavaScript functions, and JavaScript can invoke Blazor. This is something that is required currently due to the shear amount of JavaScript libraries that exist. This should not be an excuse to use as many JavaScript libraries as possible. The whole point of WebAssembly in the first place is the avoid JavaScript as much as possible. It is understandable that there may be an edge case somewhere in your application for a certain time frame that will require interop. But it will not last forever. Getting away from JavaScript is the reason why you chose Blazor in the first place.
 
 2) Remembering that the Web is a detail
 
@@ -14,7 +14,7 @@ Blazor, and by extension WebAssembly are very new technologies that are swimming
 
 3) Choosing the correct Blazor app
 
-Blazor is not just a single type of application. It comes as a three pack with different hosting options. You have the option of choosing from a standard WebAssembly app. This is the closest to a traditional SPA application. The app is loaded into the browser and is executed via WebAssembly. A progressive web application where the user my physically download the application into their physical machine which may allow them to run the application with our without an internet connection. And finally, a ASP.NET Core hosted solution where the application is executed server-side and communicates to the browser via SignalR.
+Blazor is not just a single type of application. It comes as a three pack with different hosting options. You have the option of choosing from a standard WebAssembly app. This is the closest to a traditional SPA application. The app is loaded into the browser and is executed via WebAssembly. A progressive web application where the user my physically download the application into their physical machine which may allow them to run the application with or without an internet connection. And finally, a ASP.NET Core hosted solution where the application is executed server-side and communicates to the browser via SignalR.
 
 4) Not embracing Component-based architecture
 

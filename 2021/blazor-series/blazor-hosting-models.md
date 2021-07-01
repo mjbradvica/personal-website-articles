@@ -2,7 +2,7 @@
 
 Blazor presents three different ways of hosting your application. I am not talking about hosting in the sense of using a cloud service or having a server farm in a physical location. Hosting, in Blazor’s case, revolves around where the web application will live.
 
-The wonderful thing about all three options is that your code remains the same. Your decision, then, is mostly concerned with how the application will be delivered to the client and also the capabilities of their connection. The three hosting methods are via WebAssembly, a "progressive web application,” or PWA, and ASP.NET Core hosted.
+The wonderful thing about all three options is that your code remains the same. Your decision, then, is mostly concerned with how the application will be delivered to the client and the capabilities of their connection. The three hosting methods are via WebAssembly, a "progressive web application,” or PWA, and ASP.NET Core hosted.
 
 The default WebAssembly application is for end-users who use browsers that support WebAssembly. This is almost all modern browsers such as Firefox, Chrome, and Edge. If your customer base has a large portion of people on older browsers, this may impede their ability to use your application. One of the easiest remedies is to check users’ browsers when they visit your application and kindly remind them that newer, more secure options are available.
 
