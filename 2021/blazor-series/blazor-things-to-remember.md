@@ -1,4 +1,4 @@
-# Concepts to note for Blazor applications
+# Blazor Things To Remember
 
 [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) is a wonderful new framework put forth by Microsoft as their entry into the WebAssembly development space. It allows us as developers to write responsive web applications in the language of our choice. Our code will be translated to native WebAssembly when we run our application. The biggest advantage to WebAssembly and Blazor is that it allows us to sidestep the short comings of JavaScript by using a fully-featured, type-safe language.
 
