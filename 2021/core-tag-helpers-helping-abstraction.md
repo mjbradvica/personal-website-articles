@@ -2,6 +2,6 @@ Tag helpers to abstract
 
 <container></container>
 
-vs 
+vs. 
 
 <div class="container"></div>
