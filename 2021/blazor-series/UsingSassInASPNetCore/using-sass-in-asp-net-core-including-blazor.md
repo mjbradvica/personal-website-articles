@@ -170,4 +170,4 @@ And lastly our final result with a new primary color:
 
 ![Result](result.png)
 
-I would like to thanks Mr. Colin Bacon for providing the inspiration and skeleton for this article. His blog post was published in 2017, but has since been outdated from new versions of the npm packages. This article was an exercise in getting sass operational in the newest versions of dotnet core, node, and trying to solve a common use case. You can read his blog [here](https://www.iambacon.co.uk/blog/how-to-use-sass-in-asp-net-core-2-0-mvc).
+I would like to thanks Mr. Colin Bacon for providing the inspiration and skeleton for this article. His blog post was published in 2017, but has since been outdated from new versions of the npm packages. This article was an exercise in getting sass operational in the newest versions of dotnet core, node, and trying to solve a common use case. You can read his blog [here](https://www.iambacon.co.uk/blog/how-to-use-sass-in-asp-net-core-2-0-mvc)
