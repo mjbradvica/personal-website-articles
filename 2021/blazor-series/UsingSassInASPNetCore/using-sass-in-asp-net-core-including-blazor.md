@@ -1,6 +1,6 @@
 # Using SASS in ASP.NET Core, including Blazor
 
-[Sass](https://sass-lang.com/) is a css-preprocessor that allows us to create stylesheets for web application using mixins, variables, functions, and nested rules. These SASS files will then be compiled into standard css files for us to use. ASP.NET Core and Blazor have the ability to integrate Sass into the build process. This allows us to use write our stylesheets in sass first, or import and modify existing frameworks. Today, we are going to use sass to import the Bulma library, and change the primary color with just a few lines of code.
+[Sass](https://sass-lang.com/) is a css-preprocessor that allows us to create stylesheets for web application using mixins, variables, functions, and nested rules. These SASS files will then be compiled into standard css files for us to use. ASP.NET Core and Blazor can integrate Sass into the build process. This allows us to use write our stylesheets in sass first or import and modify existing frameworks. Today, we are going to use sass to import the Bulma library and change the primary color with just a few lines of code.
 
 A few things are necessary:
 
@@ -22,9 +22,9 @@ In the Solution Explorer at the solution level, right-click -> Add -> New Item -
 
 ![Package.json](package-json.png)
 
-Once the file is added, open up the command prompt or Git Bash and navigate to the solution level where the package.json file is located. One of the easiest ways to do so is navigate to the location in File Explorer, right-click -> Git Bash Here
+Once the file is added, open the command prompt or Git Bash and navigate to the solution level where the package.json file is located. One of the easiest ways to do so is navigate to the location in File Explorer, right-click -> Git Bash Here
 
-We want to add the following packages as a dev dependency and bulma as a normal dependency.
+We want to add the following packages as a dev dependency and Bulma as a normal dependency.
 
 - Grunt
 - Grunt CLI
@@ -98,15 +98,15 @@ module.exports = function (grunt) {
 };
 ```
 
-This will tell the pre-processor where to look for our sass files, and where to compile them to. Currently, we are saying our sass files will be located in a folder called "Styles" that will exist at the same level as our package.json file, at the solution level. We will output the compiled css to the css folder located in the wwwroot. The binding at top says that our pre-process will run after every build.
+This will tell the pre-processor where to look for our sass files, and where to compile them to. Currently, we are saying our sass files will be in a folder called "Styles" that will exist at the same level as our package.json file, at the solution level. We will output the compiled css to the css folder located in the wwwroot. The binding at top says that our pre-process will run after every build.
 
-Note: Your sass files can not be in the wwwroot folder, that is reserved for serving up static files only.
+Note: Your sass files cannot be in the wwwroot folder, that is reserved for serving up static files only.
 
 Add your "Styles" folder, or whatever you wish to call it. Create a sass file inside of it. Here is what it looks like at the solution level:
 
 ![Solution](solution.png)
 
-I am going to change the primary color in bulma from its default of turquoise to something different. This post is not concerned with bulma, but I am using it as changing a color is a common use case.
+I am going to change the primary color in Bulma from its default of turquoise to something different. This post is not concerned with teaching Bulma. I am using it as changing a color is a common use case.
 
 ```scss
 @charset "utf-8";
@@ -132,7 +132,7 @@ Our color.css file being generated:
 
 ![Generated file](generated-file.png)
 
-All we have to do is import our new css file into our application and test it out:
+The last step is to import our new css file into our application and test it out:
 
 Our index.html with our css import:
 
@@ -166,8 +166,8 @@ And our Index page to look at our update:
 <p class="has-text-primary">Welcome to your new app.</p>
 ```
 
-And lastly our final result with a new primary color:
+Our final result with a new primary color:
 
 ![Result](result.png)
 
-I would like to thanks Mr. Colin Bacon for providing the inspiration and skeleton for this article. His blog post was published in 2017, but has since been outdated from new versions of the npm packages. This article was an exercise in getting sass operational in the newest versions of dotnet core, node, and trying to solve a common use case. You can read his blog [here](https://www.iambacon.co.uk/blog/how-to-use-sass-in-asp-net-core-2-0-mvc)
+I would like to thank Mr. Colin Bacon for providing the inspiration and skeleton for this article. His blog post was published in 2017 but has since been outdated from new versions of the npm packages. This article was an exercise in getting sass operational in the newest versions of dotnet core, node, and trying to solve a common use case. You can read his blog [here](https://www.iambacon.co.uk/blog/how-to-use-sass-in-asp-net-core-2-0-mvc)

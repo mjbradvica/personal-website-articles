@@ -1,6 +1,6 @@
 # Refactoring form inputs in Blazor
 
-A common scenario in forms with web applications is dealing with a lot of repetition when creating input fields. Many individual inputs have a common pattern of surrounding an input with a label, validation, and some styling. Developers continuously find themselves in copy-paste scenarios where only a few small details change for each input. The line count can easily explode into the hundreds of lines with larger forms. Most of this markup falls under the category of line noise or boiler plate that has to be there.
+A common scenario in forms with web applications is dealing with a lot of repetition when creating input fields. Many individual inputs have a common pattern of surrounding an input with a label, validation, and some styling. Developers continuously find themselves in copy-paste scenarios where only a few small details change for each input. The line count can easily explode into the hundreds of lines with larger forms. Most of this markup falls under the category of line noise or boiler plate that must be there.
 
 Every form field generally follows the same pattern of:
 
@@ -9,7 +9,7 @@ Every form field generally follows the same pattern of:
 - A label for the input
 - Styling for the input in form of css classes
 
-The following example shows two input fields in a Blazor form. The first is a text input for a name, the other is a number input for a person's age. For the sake of simplicity I am only showing the input fields. The css classes come from the Bulma library.
+The following example shows two input fields in a Blazor form. The first is a text input for a name, the other is a number input for a person's age. For the sake of simplicity, I am only showing the input fields. The css classes come from the Bulma library.
 
 ```csharp
 <div class="field">
@@ -33,7 +33,7 @@ The following example shows two input fields in a Blazor form. The first is a te
 </div>
 ```
 
-While there is nothing wrong with this markup, it is repetitive. As engineers, we should see the tedious nature of having to write the same code over and over. Forms can grow with many more fields will drastically increase the line count in a component. As developers, the infrastructure around the input is secondary. We should only have to declare a single element with all of the secondary elements being added automatically.
+While there is nothing wrong with this markup, it is repetitive. As engineers, we should see the tedious nature of having to write the same code over and over. Forms can grow with many more fields will drastically increase the line count in a component. As developers, the infrastructure around the input is secondary. We should only have to declare a single element with all the secondary elements being added automatically.
 
 If we sift through the html and razor markup, we can see the only real differences are:
 
@@ -51,7 +51,7 @@ From this we can create a common interface that will accept these parameters and
 
 This ideal implementation is a single line solution that will that contain all the markup and razor necessary to render a complete input field. We will have cut the numbers of line needs for each input from around nine to one. This will simplify our application and line count.
 
-Lets review the current implementation again for the name field again:
+Reviewing the current implementation again for the name field again:
 
 ```csharp
 <div class="field">
@@ -70,7 +70,7 @@ What we need is two components for each field:
 - An input component that is specific to the input type (text, number, email)
 - A container around the component that has the styling, label, and validation
 
-Lets start with our container component first. If we extract everything around the component and leave a RenderFragment for our input we should get the following:
+Starting with our container component first. If we extract everything around the component and leave a RenderFragment for our input, we should get the following:
 
 ```csharp
 @using System.Linq.Expressions
@@ -132,7 +132,7 @@ Our TextInput component should look like:
 }
 ```
 
-Lets go over what this component is doing:
+A quick review of what this component is doing:
 
 1) Inherits from InputBase of type string because this is a text input 
 2) Declares an input of type text, and passes the label as an id
@@ -183,4 +183,4 @@ With our new compact components our form content can finally become:
 <NumberInput @bind-Value="InputModel.Age" Label="Age" Validation="() => InputModel.Age" />
 ```
 
-The amount of markup you will be able to remove in your application ultimately comes down to how many forms and the size of those forms. For applications with minimal form usage, this technique may not make a large difference. For applications with a large number of forms, the opportunity to reduce inputs by up to ninety percent can not be overlooked.
+The amount of markup you will be able to remove in your application ultimately comes down to how many forms and the size of those forms. For applications with minimal form usage, this technique may not make a large difference. For applications with many forms, the opportunity to reduce inputs by up to ninety percent cannot be overlooked.
