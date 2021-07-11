@@ -40,4 +40,4 @@ Our BaseSubscriber will contain all the logic necessary to for subscribing, un-s
 
 Our counter subscriber inherits from BaseSubscriber and now contains minimal code. Our final product is vastly smaller and easier to understand than our original implementation.
 
-In-memory state management is just one way of tackling the issue of state in Blazor applications. When implemented correctly, your develop team can have a simple easy to use solution for passing events and state around in your application.
+In-memory state management is just one way of tackling the issue of state in Blazor applications. When implemented correctly, your develop team can have a simple, easy to use solution for passing events and state around in your application.

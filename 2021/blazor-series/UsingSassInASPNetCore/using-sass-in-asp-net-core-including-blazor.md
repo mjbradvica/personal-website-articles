@@ -1,8 +1,8 @@
 # Using SASS in ASP.NET Core, including Blazor
 
-[Sass](https://sass-lang.com/) is a css-preprocessor that allows us to create stylesheets for web application using mixins, variables, functions, and nested rules. These SASS files will then be compiled into standard css files for us to use in our application. ASP.NET Core and Blazor have the ability to integrate Sass into our the build process. This allows us to use write our stylesheets in sass first, or import and modify existing frameworks. Today, we are going to use sass to import the Bulma library, and change the primary color with just a few lines of code.
+[Sass](https://sass-lang.com/) is a css-preprocessor that allows us to create stylesheets for web application using mixins, variables, functions, and nested rules. These SASS files will then be compiled into standard css files for us to use. ASP.NET Core and Blazor have the ability to integrate Sass into the build process. This allows us to use write our stylesheets in sass first, or import and modify existing frameworks. Today, we are going to use sass to import the Bulma library, and change the primary color with just a few lines of code.
 
-A few things are necessary first:
+A few things are necessary:
 
 1) An updated version of dotnet Core
 
@@ -16,13 +16,13 @@ Go to Options -> Tools -> Projects and Solutions -> Web Package Management. Make
 
 ![Correct Tooling](ide-tooling.png)
 
-Once that is correct, we need to add a package.json to our solution because we will be using a few npm packages to handle our sass to css conversion.
+Once that is correct, we need to add a package.json to our solution because we will be using a few npm packages to handle our sass to css compilation.
 
 In the Solution Explorer at the solution level, right-click -> Add -> New Item -> npm Configuration File
 
 ![Package.json](package-json.png)
 
-When the file is added, open up the command prompt or Git Bash and navigate to the solution level where the package.json file is located. One of the easiest ways to do so is navigate to the location in File Explorer the right-click -> Git Bash Here
+Once the file is added, open up the command prompt or Git Bash and navigate to the solution level where the package.json file is located. One of the easiest ways to do so is navigate to the location in File Explorer, right-click -> Git Bash Here
 
 We want to add the following packages as a dev dependency and bulma as a normal dependency.
 
@@ -98,7 +98,7 @@ module.exports = function (grunt) {
 };
 ```
 
-This will tell the pre-processor where to look for our sass files, and where to compile them to. Currently, we are saying our sass files will be located in a folder called "Styles" that will exist at the same level as our package.json file, or the solution level. We will output the compiled css to the css folder located in the wwwroot. The binding at top says that our pre-process will run after every build.
+This will tell the pre-processor where to look for our sass files, and where to compile them to. Currently, we are saying our sass files will be located in a folder called "Styles" that will exist at the same level as our package.json file, at the solution level. We will output the compiled css to the css folder located in the wwwroot. The binding at top says that our pre-process will run after every build.
 
 Note: Your sass files can not be in the wwwroot folder, that is reserved for serving up static files only.
 
@@ -106,7 +106,7 @@ Add your "Styles" folder, or whatever you wish to call it. Create a sass file in
 
 ![Solution](solution.png)
 
-I am going to change a the primary color in bulma from its default of turquoise to something different. This post is not concerned with bulma, but I am using it as changing a color is a common use case.
+I am going to change the primary color in bulma from its default of turquoise to something different. This post is not concerned with bulma, but I am using it as changing a color is a common use case.
 
 ```scss
 @charset "utf-8";

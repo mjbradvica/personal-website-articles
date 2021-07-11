@@ -1,6 +1,6 @@
 # Refactoring form inputs in Blazor
 
-A common scenario in forms with any web application is dealing with a lot of repetition when creating input fields. Many individual inputs have a common pattern of taking an input tag and surrounding it with a label, validation, and some styling. Developers continuously find themselves in copy-paste scenarios with code where only a few small details change for each input. With larger forms, the line count can easily explode into the hundreds of lines. Most of this markup falls under the category of line noise or boiler plate that just has to be there.
+A common scenario in forms with web applications is dealing with a lot of repetition when creating input fields. Many individual inputs have a common pattern of surrounding an input with a label, validation, and some styling. Developers continuously find themselves in copy-paste scenarios where only a few small details change for each input. The line count can easily explode into the hundreds of lines with larger forms. Most of this markup falls under the category of line noise or boiler plate that has to be there.
 
 Every form field generally follows the same pattern of:
 
@@ -9,7 +9,7 @@ Every form field generally follows the same pattern of:
 - A label for the input
 - Styling for the input in form of css classes
 
-The following example shows two input fields for a form in Blazor. One is a text input for a name, the other is a number input for a person's age. For the sake of simplicity I am only showing the input fields. The css classes come from the Bulma library.
+The following example shows two input fields in a Blazor form. The first is a text input for a name, the other is a number input for a person's age. For the sake of simplicity I am only showing the input fields. The css classes come from the Bulma library.
 
 ```csharp
 <div class="field">
@@ -134,11 +134,11 @@ Our TextInput component should look like:
 
 Lets go over what this component is doing:
 
-1) Inherits from InputBase of type string because this is a text input
-2) Passes an input to the "InputContainer" component, alongside the label name and validation expression which are parameters for the component
-3) Declares an input of type text, and passes the label as an id
-4) Adds the "CssClass" property, which is part of InputBase class. This allows Blazor to add the "valid" and "invalid" classes during validation
-5) Adds two-way binding to the "CurrentValue" property inherited from the InputBase class
+1) Inherits from InputBase of type string because this is a text input 
+2) Declares an input of type text, and passes the label as an id
+3) Adds the "CssClass" property, which is part of InputBase class. This allows Blazor to add the "valid" and "invalid" classes during validation
+4) Adds two-way binding to the "CurrentValue" property inherited from the InputBase class
+5) Passes the input to the "InputContainer" as a child, the label name, and validation expression
 6) Implements the TryParseValueFromString method
 
 For reference our NumberInput can now become:
