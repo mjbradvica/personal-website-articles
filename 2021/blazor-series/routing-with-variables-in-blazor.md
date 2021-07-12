@@ -1,8 +1,8 @@
 # Routing with Variables in Blazor
 
-Routing to components in Blazor can be done using variables very easily. This can be a cleaner alternative than using raw strings everywhere.
+Routing to components in Blazor is easy when leveraging variables. This can be a cleaner alternative to using raw strings throughout.
 
-This example uses the default Counter component that is included when a new Blazor project is created. The only requirement is a class that contains constant strings to use for our routes:
+The example below uses the default Counter component included whenever a new Blazor project is created. The only requirement is a class that contains constant strings to use for our routes:
 
 ```csharp
     public static class PageRoutes
@@ -13,7 +13,7 @@ This example uses the default Counter component that is included when a new Blaz
     }
 ```
 
-Note: At the time I am writing this, constant interpolated strings are in a preview stage. That will allow you to cut down on the repetition in this file.
+Note: Constant interpolated strings are in a preview stage to cut down on redundancies.
 
 You can use routes with parameters as well:
 

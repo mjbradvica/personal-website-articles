@@ -1,12 +1,12 @@
 # Blazor In-Memory State Management Part 1 of 3
 
-In traditional web applications state is stored in the database, cookies, or URL. While all those options are still viable in Blazor, we have new technique available in the form of in-memory state. Our state can be updated via publishing an event from a component that any other component in our application may subscribe to. The barrier to entry for creating our in-memory state container is very small.
+In traditional web applications, state is stored in the database, cookies, or URL. While all those options are still viable in Blazor, we have a new technique available called in-memory state. Our state can be updated via publishing an event from a component, to which any other component in our application may subscribe. The barrier to entry for creating our in-memory state container is very small.
 
 Note: I am using the standard Blazor template that is generated when creating any new Blazor project.
 
 A quick overview of what we will be implementing:
 
-- Events that we will publish
+- Events we will publish
 - A composition root for our events
 - A way for components to subscribe and un-subscribe from events
 
@@ -18,7 +18,7 @@ public interface IAction
 }
 ```
 
-We are using a blank interface to constrain what objects are events.
+We are using a blank interface to constrain which objects are events.
 
 We now need to define a few events:
 
@@ -64,7 +64,7 @@ public class StateStore
 
 Our StateStore has the following properties and methods:
 
-- A Dictionary that acts as a switch-case that will trigger an event handler depending on what event was published
+- A Dictionary that acts as a switch-case that will trigger an event handler depending on which event was published
 - A "Publish" method that our components will use to publish an event
 - Numerous events that components may choose to subscribe to
 
@@ -95,7 +95,7 @@ In our App.razor file:
 
 We added a "CascadingValue" that wraps our MainLayout component. In the code section, we initialized our object. Any component may now publish or subscribe to events.
 
-The default counter component contains a button that when clicked, keeps track of the click counts internally. We are going to modify the component to publish events to our StateStore instead. We will then create a new component that listens and reacts accordingly.
+The default counter component contains a button that (when clicked) keeps track of the click counts internally. We will modify the component to publish events to our StateStore instead. We will then create a new component that listens and reacts accordingly.
 
 ```csharp
 @page "/counter"
@@ -114,7 +114,7 @@ The default counter component contains a button that when clicked, keeps track o
 
 ```
 
-Our component now accepts the StateStore as a cascading parameter which we will use to publish counter events. We have two button that will publish an event to either increase or decrease the counter.
+Our component now accepts the StateStore as a cascading parameter which we will use to publish counter events. We have two buttons that will publish an event to either increase or decrease the counter.
 
 We now need a component to react to the events that are being published:
 
@@ -159,7 +159,7 @@ We now need a component to react to the events that are being published:
 
 ```
 
-There is a lot happening in this component, it can be summarized by the following:
+There is a lot happening in this component, summarized by the following:
 
 - Our counter subscriber component accepts the StateStore as a cascading parameter just like the counter component
 - We declare a variable for the "CurrentCount" that will be displayed in the UI
