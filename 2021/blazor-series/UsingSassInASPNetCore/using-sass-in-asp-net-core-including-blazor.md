@@ -22,7 +22,7 @@ In the Solution Explorer at the solution level, right-click -> Add -> New Item -
 
 Once the file is added, open the command prompt or Git Bash then navigate to the solution level where the package.json file is located. (One of the easiest methods of navigation is in File Explorer, right-click -> Git Bash Here)
 
-We want to add the following packages as a dev dependency and bulma as a normal dependency.
+We want to add the following packages as a dev dependency and Bulma as a normal dependency.
 
 - Grunt
 - Grunt CLI
@@ -53,7 +53,7 @@ Our package.json file should now look like this:
 }
 ```
 
-Your version numbers will probably be different as this post was done in the summer of 2021.
+Note: Your version numbers will probably be different as this post was done in the summer of 2021.
 
 Just as we added our package.json at the solution level, right-click -> Add New Item -> Choose a javascript file, and name it "gruntfile.js"
 
