@@ -1,4 +1,4 @@
-# NPredicateBuilder, An Alternative To Repetative Queries
+# NPredicateBuilder, An Alternative to Repetitive Queries
 
 [NPredicateBuilder](https://www.nuget.org/packages/NPredicateBuilder.EF/) [(repo here)](https://github.com/mjbradvica/n-predicate-builder) is a way to condense redundant Where and Order LINQ clauses in your application. Even better, you can take each predicate and test it independently. This means you know that any large query that you create that is unable to be tested by itself works properly.
 
@@ -37,7 +37,7 @@ var order = new PersonOrders()
     .ThenByAge();
 ```
 
-The main difference is that you can re-use your predicates any any query you so wish. So having redundant clauses that may appear in dozens of queries such as...
+The main difference is that you can re-use your predicates any query you so wish. So having redundant clauses that may appear in dozens of queries such as...
 
 ```csharp
     .Where(x => x.Age >= 10);
@@ -56,9 +56,9 @@ public PersonQueries IsOlderThan(int age)
 
 ## Advantages of NPredicateBuilder
 
-### Queries and Orders are Declaritive
+### Queries and Orders are Declarative
 
-Your queries are far more descriptive and easy to read. Are you really going to name a method, "NameIsNotJoeAndIsOlderThanTenAndIsEligigleOrderedByNameThenAge". No, that is insanity. NPredicateBuilder is declaritive by nature. Your queries and order describe themselves in a clear and consise fashion.
+Your queries are far more descriptive and easier to read. Naming a method "NameIsNotJoeAndIsOlderThanTenAndIsEligigleOrderedByNameThenAge" is pure insanity. NPredicateBuilder is declarative by nature. Your queries and orders describe themselves in a clear and concise fashion.
 
 ### Everything is Now Testable
 
@@ -114,9 +114,9 @@ public interface IPersonRepository
 
 ### Actually Easy to Learn
 
-NPredicateBuilder is easy to learn because it's tiny. Two bases classes, and a couple of extension methods. That's it.
+NPredicateBuilder is easy to learn because it's tiny. Two base classes and a couple of extension methods. That's it.
 
-### It Plays Nicely With Everything
+### It Plays Nicely with Everything
 
 Because NPredicateBuilder is two extension methods, you can plug it into any LINQ expression.
 
@@ -132,4 +132,4 @@ var predicateBuilder = people
 
 ## In Short
 
-If your application mostly deals with CRUD and you have only a few joins, NPredicateBuilder may not be worth it. Where NPredicateBuilder really shines is with applications that have many queries and orders that are duplicated or partially duplicated multiple times. It allows any developer to reduce their code base into resuable, testible code nuggets that make life easier.
+If your application mostly deals with CRUD and you have only a few joins, NPredicateBuilder may not be worth it. Where NPredicateBuilder really shines is with applications that have many queries and orders that are duplicated or partially duplicated multiple times. It allows any developer to reduce their code base into reusable, testable code nuggets that make life easier.
