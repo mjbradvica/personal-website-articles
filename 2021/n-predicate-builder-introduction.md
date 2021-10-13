@@ -1,6 +1,6 @@
-# NPredicateBuilder, An Alternative to Repetitive Queries
+# NPredicateBuilder, an Alternative to Repetitive Queries
 
-[NPredicateBuilder](https://www.nuget.org/packages/NPredicateBuilder.EF/) [(repo here)](https://github.com/mjbradvica/n-predicate-builder) is a way to condense redundant Where and Order LINQ clauses in your application. Even better, you can take each predicate and test it independently. This means you know that any large query that you create that is unable to be tested by itself works properly.
+[NPredicateBuilder](https://www.nuget.org/packages/NPredicateBuilder.EF/) [(repo here)](https://github.com/mjbradvica/n-predicate-builder) is a means to condense redundant "Where" and "Order" LINQ clauses in your application. Even better, you can test each predicate independently. By this, you can be certain that any large query you create--which is unable to be tested by itself--works properly.
 
 NPredicateBuilder allows you to turn...
 
@@ -37,13 +37,13 @@ var order = new PersonOrders()
     .ThenByAge();
 ```
 
-The main difference is that you can re-use your predicates any query you so wish. So having redundant clauses that may appear in dozens of queries such as...
+The main difference is that you can re-use your predicates with any desired query. So, instead of redundant clauses that may appear in dozens of queries such as--
 
 ```csharp
     .Where(x => x.Age >= 10);
 ```
 
-now becomes re-usable, testable methods.
+--you now have re-usable, testable methods.
 
 ```csharp
 public PersonQueries IsOlderThan(int age)
@@ -58,13 +58,13 @@ public PersonQueries IsOlderThan(int age)
 
 ### Queries and Orders are Declarative
 
-Your queries are far more descriptive and easier to read. Naming a method "NameIsNotJoeAndIsOlderThanTenAndIsEligigleOrderedByNameThenAge" is pure insanity. NPredicateBuilder is declarative by nature. Your queries and orders describe themselves in a clear and concise fashion.
+Your queries are far more descriptive and easier to read with NPredicateBuilder. Being forced to name a method "NameIsNotJoeAndIsOlderThanTenAndIsEligigleOrderedByNameThenAge" is pure insanity. NPredicateBuilder is declarative by nature. Your queries and orders describe themselves in a clear and concise fashion.
 
 ### Everything is Now Testable
 
-It is near impossible to test EF queries because the DbContext object is almost impossible to mock. The only way around this is to extract every predicate in your application so you can test them individually. NPredicateBuilder has this behavior by default. Because every single where and order clause is separate, testing is easy.
+It is near impossible to test EF queries because the DbContext object is almost impossible to mock. The only way around this is to extract every predicate in your application so you can test it individually. NPredicateBuilder performs this behavior by default. Because every single Where and Order clause is separate, testing is easy.
 
-The following shows how to test an Order:
+The following demonstrates how to test an Order:
 
 ```csharp
 [TestMethod]
@@ -103,7 +103,7 @@ public interface IPersonRepository
 }
 ```
 
-now can just become...
+With NPredicateBuilder, the above can become simply...
 
 ```csharp
 public interface IPersonRepository
@@ -114,11 +114,11 @@ public interface IPersonRepository
 
 ### Actually Easy to Learn
 
-NPredicateBuilder is easy to learn because it's tiny. Two base classes and a couple of extension methods. That's it.
+NPredicateBuilder is easy to learn because it's tiny. It includes two base classes and a couple of extension methods. That's it.
 
 ### It Plays Nicely with Everything
 
-Because NPredicateBuilder is two extension methods, you can plug it into any LINQ expression.
+Because NPredicateBuilder has two extension methods, you can plug it into any LINQ expression.
 
 ```csharp
 var predicateBuilder = people
