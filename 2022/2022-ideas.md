@@ -40,6 +40,10 @@
 
 * Consistently average software is better than occasionally good software
 
+* C# equality cheat sheet
+
+* When to use an interface (mock or different implementations)
+
 ## Q4 Articles
 
 * Alternatives to Blazor
