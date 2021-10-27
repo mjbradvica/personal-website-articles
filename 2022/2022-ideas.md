@@ -50,6 +50,10 @@
 
 * From delegates to LINQ, everything is a function
 
+* Common configurations for js frameworks in VS Code
+
+* Applying prettier with the new husky
+
 ## Q4 Articles
 
 * Alternatives to Blazor
