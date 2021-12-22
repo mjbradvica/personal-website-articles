@@ -1,5 +1,8 @@
 # Using SASS in ASP.NET Core, including Blazor
 
+> Note: This articles was updated in December 2021 to reflect changes to
+how Sass is transpiled. As [LibSass is now depreciated](https://sass-lang.com/blog/libsass-is-deprecated), this article now uses a Dart Sass implementation.
+
 [Sass](https://sass-lang.com/) is a css-preprocessor that allows us to create stylesheets for web applications using mixins, variables, functions, and nested rules. These SASS files are then compiled into standard css files for our use. What is nice, ASP.NET Core and Blazor can integrate Sass into the build process. This allows us to write our stylesheets in sass first or even import and modify existing frameworks. Today, we are going to use sass to import the Bulma library and change the primary color with just a few lines of code.
 
 A few things are necessary:
@@ -27,12 +30,12 @@ We want to add the following packages as a dev dependency and Bulma as a normal 
 - Grunt
 - Grunt CLI
 - Grunt Sass
-- Node Sass
+- Sass
 
 You can use the following commands:
 
 npm install bulma
-npm install grunt grunt-cli grunt-sass node-sass --save-dev
+npm install grunt grunt-cli grunt-sass sass --save-dev
 
 Our package.json file should now look like this:
 
@@ -45,7 +48,7 @@ Our package.json file should now look like this:
     "grunt": "^1.4.1",
     "grunt-cli": "^1.4.3",
     "grunt-sass": "^3.1.0",
-    "node-sass": "^6.0.1"
+    "sass": "^1.45.1"
   },
   "dependencies": {
     "bulma": "^0.9.3"
@@ -53,7 +56,7 @@ Our package.json file should now look like this:
 }
 ```
 
-Note: Your version numbers will probably be different as this post was done in the summer of 2021.
+Note: Your version numbers will probably be different as this post was done in the winter of 2021.
 
 Just as we added our package.json at the solution level, right-click -> Add New Item -> Choose a javascript file, and name it "gruntfile.js"
 
@@ -66,7 +69,7 @@ Add the following contents to your new gruntfile:
 
 module.exports = function (grunt) {
 
-    var sass = require('node-sass');
+    var sass = require('sass');
 
     grunt.initConfig({
 
@@ -167,5 +170,3 @@ And our Index page to look at our update:
 Our final result with a new primary color:
 
 ![Result](result.png)
-
-Special thanks to Mr. Colin Bacon for providing the inspiration and skeleton for this article. His blog post was published in 2017 but has since been outdated from new versions of the npm packages. This article was an exercise in getting sass operational in the newest versions of dotnet core, node, and trying to solve a common use case. You can read his blog [here](https://www.iambacon.co.uk/blog/how-to-use-sass-in-asp-net-core-2-0-mvc)
