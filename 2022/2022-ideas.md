@@ -44,6 +44,16 @@
 
 * When to use an interface (mock or different implementations)
 
+* An interface doesn't mean just an interface
+
+* Finding a common interface is best thing you can do
+
+* From delegates to LINQ, everything is a function
+
+* Common configurations for js frameworks in VS Code
+
+* Applying prettier with the new husky
+
 ## Q4 Articles
 
 * Alternatives to Blazor
