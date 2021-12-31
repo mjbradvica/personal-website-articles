@@ -54,6 +54,8 @@
 
 * Applying prettier with the new husky
 
+* Where should you validate objects
+
 ## Q4 Articles
 
 * Alternatives to Blazor
