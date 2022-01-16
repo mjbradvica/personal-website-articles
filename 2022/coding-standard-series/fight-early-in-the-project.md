@@ -32,7 +32,6 @@ You can even have it so the compiler will fail the ability to build the project 
 
 Most languages already have coding standards that the teams have decided to use internally. Use these when you can't come to a conclusion about a certain rule.
 
-
 ## Conclusion
 
 Fighting over coding styles and rules is an exercise in stupid. How you structure code is an internal team detail that a customer will have zero knowledge of.
