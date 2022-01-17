@@ -1,42 +1,39 @@
-# Fight Early in Your Project, Then Bury the Hatchet
+# Establish Coding Standards Early
 
-How many coding standard fights do you have on a project?
+Tabs vs Spaces
+Semicolon placement
+Parenthesis around lambdas
 
-How many times have you had to nit-pick at pull request become someone did not "follow the rules"?
+These are just a few examples, but how many altercations regarding coding standards have you had on your projects?
 
-The idea answer is zero.
+How many times have you had to comment a pull request because someone did not follow the rules?
 
-The next best answer is one fight, and no pull request where someone had to exercise their inner passive aggressive demons.
+The ideal answer is zero.
 
-Tabs vs spaces.
-How many indents.
-Parenthesis with lambdas.
+We get to zero when we establish standards and rules early. After all, languages are based on standardization of meaning--this includes code.
 
-All of these are silly arguments that do nothing to provide a better product to your customer. Because ultimately the only way your product makes money is if you can deliver a good project at an acceptable price to your customer. They don't care about what line endings you choose.
+Minimizing disagreements in pull requests exorcises the inner passive-aggressive demons that otherwise may arise.
 
-## Pick a style, and stick with it
+Arguing over coding standards improves neither product nor experience. Ultimately, delivering a good product at an acceptable price to your customer should take priority. Customers don't care about what line endings you choose, as long as you choose in the beginning.
+
+## Pick a Style, and Stick with It
 
 The only thing that matters is consistency in your project.
 
-I would rather work on a project that I disagreed with every style rules that was consistent, than one that half-enforced the rules I did prefer.
+We don't have to agree with every rule, or even like it, but we must stay consistent.
 
-Pick a set of rules and enforce them at all costs. Don't let a rogue developer who thinks, "the rules don't apply to me" to erode team morale by skirting the rules that everyone else has to adhere to.
+Pick a set of rules, then enforce them at all costs. Don't let a rogue developer erode your team's morale by skirting the rules that everyone else must follow.
 
-## Use the compiler to enforce the rules
+## Use the Compiler to Enforce the Rules
 
-Embrace the compiler. It's a soulless entity that doesn't play favorites. A perfect vehicle to keep your team in check at all times.
+Embrace the compiler. It's a soulless entity that doesn't play favorites--a perfect vehicle to keep your team in check at all times.
 
-You can even have it so the compiler will fail the ability to build the project unless all rules are enforced. The best way of not having to deal with an issue in a pull request is for the issue to never have the issue in the first place.
+You can even make it so that the compiler will fail to build the project unless all rules are enforced. Save time and money by having the compiler do the dirty work for you.
 
-## Use the default rule if your team can't decide
+## Use the Default Rule if Your Team Can't Decide
 
-Most languages already have coding standards that the teams have decided to use internally. Use these when you can't come to a conclusion about a certain rule.
+Most language teams readily publish a set of recommended rules. Reference these when your own team can't decide on a certain rule. ESLint has a [recommended](https://eslint.org/docs/rules/) ruleset. Microsoft [publishes](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions) their recommended code rules. There's always one who will fall on a sword or die on a hill for a trivial rule. If you are unable to reach a conclusion, agree ahead of time to defer to the language standard.
 
 ## Conclusion
 
-Fighting over coding styles and rules is an exercise in stupid. How you structure code is an internal team detail that a customer will have zero knowledge of.
-
-* Fights over coding styles and rules are stupid
-* If your going to fight over them, do it on day one then never do it again
-* Use the compiler to enforce your rules
-* Use the already existing rules that other teams have adopted
+Fighting over coding styles and rules is an exercise in futility. How you structure your code is entirely  an internal team detail. Air your grievances early, then hit the ground coding. If your team is unable to come to a conclusion, then defer to the standard for that language or framework.

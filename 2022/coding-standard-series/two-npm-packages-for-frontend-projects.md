@@ -1,29 +1,25 @@
-# Two npm packages for every frontend project
+# Two npm Packages for Every Frontend Project
 
 If you are using a javascript or typescript frontend framework, use [ESLint](https://eslint.org/) with [Prettier](https://prettier.io/) and never look back.
 
-ESLint is a linter that contains best practice coding standards such as making sure non-void functions have a return statement and that variables are declared properly.
+ESLint is a linter that contains best practice coding standards, such as enforcing that function return types and variables are declared properly.
 
-Prettier is a pure style enforcement tool that enforces spacing, semi-colons, and white space.
+Prettier is a pure styling tool that automates spacing, semi-colons, and white space.
 
 When put together and enforced via the compiler, your application becomes consistent throughout and provides a constant feedback loop to your developers on what is correct and what is not.
 
-If you are using a recent version of React, Angular, or Vue that was scaffolded via their respective CLI's, then you probably already have one or both installed already.
+If you are using a recent version of React, Angular, or Vue application that was scaffolded via their respective CLI's, then you probably have one (or both) installed already.
 
-These projects already have predefined rule sets and plugins that already have a majority of the rules you need defined and ready to go. You should have to define very few if any custom rules.
+These projects come with predefined rule sets and plugins that contain a majority of the rules needed. You should have to define very few if any custom rules.
 
-## ESLint with Angular
+## ESLint
 
-If you are using Angular, the [angular-eslint](https://github.com/angular-eslint/angular-eslint) package can install everything you need, and even remove tslint for you.
+If you are using Angular, the [angular-eslint](https://github.com/angular-eslint/angular-eslint) package can install everything you need and even remove tslint for you. If you are using React or Vue without ESLint, sadly there is no alternative to add it easily. My recommendation is to create another React or Vue project on the side and then copy the npm packages and configuration files into your project.
 
-## ESLing with React or Vue
+## Prettier
 
-If you are using React or Vue without ESLint, then sadly currently there isn't a option available to add it as easily as their is with Angular. My recommendation is to create another React or Vue project on the side and then copy the npm packages and configuration files over into your project.
-
-## Prettier recommendations
-
-I also highly recommend using the [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier) and [eslint-plugin-prettier](https://www.npmjs.com/package/eslint-plugin-prettier) plugins to have a more seamless experience integrating the two together.
+I highly recommend using the [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier) and [eslint-plugin-prettier](https://www.npmjs.com/package/eslint-plugin-prettier) plugins to have a more seamless experience integrating the two.
 
 ## Conclusion
 
-A frontend project with and without the one-two punch of ESLint and Prettier is a night and day comparison. Utilizing the two together will enforce a consistent coding style that will simplify your job as a manager and architect as you will have one less thing to worry about.
+A frontend project either with or without the one-two punch of ESLint and Prettier is night and day. Combining the two will enforce a consistent coding style that simplifies your job as manager and architect. ESLint and Prettier, in conjunction, keep a sterile development environment so that issues don't fester.
