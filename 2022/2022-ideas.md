@@ -6,14 +6,14 @@
 
 * Four things all well engineered software contains
 
-    * Some kind of DevOps pipeline
-    * Strongly enforced coding standards
-    * A clearly defined architecture, whatever it is
-    * Easily understandable onboarding documentation
+  * Some kind of DevOps pipeline
+  * Strongly enforced coding standards
+  * A clearly defined architecture, whatever it is
+  * Easily understandable onboarding documentation
 
 * Choosing between EF, Dapper, Nhibernate, ADO.NET
-    * Advantages-disadvantages of all four
-    * Adv/Dis between EF code first, db first, db from model
+  * Advantages-disadvantages of all four
+  * Adv/Dis between EF code first, db first, db from model
 
 * The beauty that are common interfaces (make it abstract)
 
@@ -22,11 +22,11 @@
 * NBaseRepository repo and its future
 
 * Refactoring your Data Access layer (series)
-    * The purpose of the Repository
-    * Extracting predicates from queries
-    * Using query objects
-    * Moving to a common base repository
-    * Using NPredicateBuilder for queries
+  * The purpose of the Repository
+  * Extracting predicates from queries
+  * Using query objects
+  * Moving to a common base repository
+  * Using NPredicateBuilder for queries
 
 * Understanding conditional AND/OR in LINQ statements
 
@@ -56,40 +56,42 @@
 
 * Where should you validate objects
 
+* What are your engineering values? (make a list, prioritize, use to make decisions)
+
 ## Q4 Articles
 
 * Alternatives to Blazor
-    * ASP.NET Core Razor Pages
-    * ASP.NET Core MVC
-    * Angular
-    * React
+  * ASP.NET Core Razor Pages
+  * ASP.NET Core MVC
+  * Angular
+  * React
 
 * Reasons to go Blazor Adjacent
-    * You don't need a fully interface UI
-    * Talent doesn't have the right skills
-    * Need more framework maturity
-    * Technical stack is already heave Javascript
+  * You don't need a fully interface UI
+  * Talent doesn't have the right skills
+  * Need more framework maturity
+  * Technical stack is already heave Javascript
 
 * Adding Typescript to an ASP.NET Core Projects
-    * Typescript is a more type-safe and safer coding method
-    * Expand in ESLint, Prettier, ect
+  * Typescript is a more type-safe and safer coding method
+  * Expand in ESLint, Prettier, ect
 
 * Using ASP.NET Core Tag Helpers to abstract the UI
-    * Easier code base for developers to work in
+  * Easier code base for developers to work in
 
 * Task-Based UI's as Business value
-    * Task-based UI provides details for changes
-    * person changes address/card means changes in behavior
-    * Three part of refactoring to task-based UI
+  * Task-based UI provides details for changes
+  * person changes address/card means changes in behavior
+  * Three part of refactoring to task-based UI
 
 * Custom colors in Bulma
-    * adding secondary and tertiary colors in bulma
+  * adding secondary and tertiary colors in bulma
 
 * Leverage front-end code generation from Swagger
-    * Less time spent creating boilerplate front ends
+  * Less time spent creating boilerplate front ends
 
 * A base page pattern for ASP.NET Core Razor Pages
-    * Reduce your code base
+  * Reduce your code base
 
 1) Blazor Prop value
 2) Alternative to Blazor
