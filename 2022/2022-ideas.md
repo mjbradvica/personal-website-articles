@@ -58,6 +58,8 @@
 
 * What are your engineering values? (make a list, prioritize, use to make decisions)
 
+* Code is a by-product via your processes, (testing, devops, technical debt, architecture, standards, documentation) "gone in 60 seconds quote, speed is a by-product"
+
 ## Q4 Articles
 
 * Alternatives to Blazor
