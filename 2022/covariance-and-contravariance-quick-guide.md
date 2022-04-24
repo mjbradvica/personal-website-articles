@@ -1,6 +1,6 @@
 # Covariance & Contravariance Quick Guide
 
-Covariance and Contravariance are both concepts concerned with the ability or inability to assign base or derived types from generic interfaces. You can think of these keywords as enabling [Liskov Substitution Principle](https://en.wikipedia.org/wiki/Liskov_substitution_principle) for generic interfaces.
+Covariance and Contravariance are concerned with the ability to assign base or derived types from generic interfaces. You can think of these keywords as enabling the [Liskov Substitution Principle](https://en.wikipedia.org/wiki/Liskov_substitution_principle) for generic interfaces.
 
 A common example is the IEnumerable interface. You can assign a base type from what is initialized.
 
@@ -33,7 +33,7 @@ public interface IWontWork<(out or in) T>
 }
 ```
 
-Generic parameters defined by either covariance or contravariance must be either returned or used as parameters, but not both.
+Generic parameters defined by either covariance or contravariance must be either returned or used as parameters--but not both.
 
 ## Covariance
 
@@ -46,9 +46,9 @@ public interface IMyInterface<out T>
 }
 ```
 
-By adding this keyword we are defining a rule that states--Any type returned by this method may be assigned to a base type.
+By adding this keyword we are defining a rule that states: any type returned by this method may be assigned to a base type.
 
-Assuming we had class A and class B that was derived from A we could do the following.
+Assuming we have class A, and class B that was derived from A, we could do the following:
 
 ```csharp
 A baseType = IMyInterface<B>;
@@ -67,11 +67,11 @@ public async Task<IEnumerable<int>> MyMethod()
 }
 ```
 
-The following error will occur:
+This error will occur:
 
 Error: CS0029 - Cannot implicitly convert type 'type' to 'type'
 
-If we look at the Task object we'll see the following:
+If we look at the Task object:
 
 ```csharp
 public class Task<TResult> : Task
@@ -95,7 +95,7 @@ public async Task<IEnumerable<int>> MyMethod()
 
 ## Contravariance
 
-Contravariance is just the opposite of covariance. We can take assign a base type to a derived variable.
+Contravariance is just the opposite of covariance. We can assign a base type to a derived variable.
 
 ```csharp
 public interface IMyInterface<in T>
@@ -104,7 +104,7 @@ public interface IMyInterface<in T>
 }
 ```
 
-If we had the following classes:
+If we have the following classes:
 
 ```csharp
 public class MyBase
@@ -120,16 +120,16 @@ public class MyDerived : MyBase
 }
 ```
 
-Then I could do the following with my interface:
+Then we can do the following with these interfaces:
 
 ```csharp
 IMyInterface<MyDerived> obj = new MyInterfaceImplementation<MyBase>();
 ```
 
-The situations for using contravariance and the "in" keyword are not as robust as covariance. This is because good software is built around abstractions, not details.
+The situations for using contravariance and the "in" keyword are not as robust as covariance. This is because good software is built around abstractions rather than details.
 
-If you have ever used the IComparable or IComparer interfaces, both of these interfaces use contravariance because you are able to compare both base and derived types when sorting lists.
+Common examples of contravariance are the IComparable and IComparer interfaces, which compare both base and derived types when sorting lists.
 
 ## Conclusion
 
-Covariance and contravariance both involve inheritance for generic interfaces. Covariance allows you assign base types from returned derived types. Contravariance allows you to assign derived types to base type parameters. Covariance is more applicable than contravariance due to our desire to prefer base types to derived types. If you are ever asked about these topics or the "in" and "out" keywords in an interview, simply respond with, "They allow you to apply the Liskov Substitution Principle to generic interfaces".
+Covariance allows you to assign base types from returned derived types. Contravariance allows you to assign derived types to base type parameters. Covariance is more applicable than contravariance due to our preference for base types. If you are ever asked about these topics or the "in" and "out" keywords in an interview, simply respond with, "They allow you to apply the Liskov Substitution Principle to generic interfaces."
