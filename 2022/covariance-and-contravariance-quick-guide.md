@@ -8,7 +8,7 @@ A common example is the IEnumerable interface. You can assign a base type from w
     IEnumerable<object> vals = new List<MyClass>();
 ```
 
-The is because if you look at the interface, you'll see the following:
+Looking at the interface, you'll see the following:
 
 ```csharp
   public interface IEnumerable<out T> : IEnumerable
@@ -46,9 +46,7 @@ public interface IMyInterface<out T>
 }
 ```
 
-By adding this keyword we are defining a rule that states-
-
-> Covariance: Any type returned by this method may be assigned to a base type.
+By adding this keyword we are defining a rule that states--Any type returned by this method may be assigned to a base type.
 
 Assuming we had class A and class B that was derived from A we could do the following.
 
