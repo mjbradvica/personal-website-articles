@@ -45,7 +45,7 @@ From this, we can create a common interface that will accept these parameters an
 
 ```csharp
 <TextInput @bind-Value="InputModel.Name" Label="Name" Validation="() => InputModel.Name" />
-    
+
 <NumberInput @bind-Value="InputModel.Age" Label="Age" Validation="() => InputModel.Age" />
 ```
 
@@ -134,12 +134,12 @@ Our TextInput component:
 
 A quick review of what this component is accomplishing:
 
-1) Inherits from InputBase of type string because this is a text input
-2) Declares an input of type text and passes the label as an id
-3) Adds the "CssClass" property, which is part of InputBase class, allowing Blazor to add the "valid" and "invalid" classes during validation
-4) Adds two-way binding to the "CurrentValue" property inherited from the InputBase class
-5) Passes the input to the "InputContainer" as a child, the label name, and validation expression
-6) Implements the TryParseValueFromString method
+1. Inherits from InputBase of type string because this is a text input
+2. Declares an input of type text and passes the label as an id
+3. Adds the "CssClass" property, which is part of InputBase class, allowing Blazor to add the "valid" and "invalid" classes during validation
+4. Adds two-way binding to the "CurrentValue" property inherited from the InputBase class
+5. Passes the input to the "InputContainer" as a child, the label name, and validation expression
+6. Implements the TryParseValueFromString method
 
 For reference, our NumberInput becomes:
 
@@ -179,7 +179,7 @@ But with our new compact components, our form content becomes:
 
 ```csharp
 <TextInput @bind-Value="InputModel.Name" Label="Name" Validation="() => InputModel.Name" />
-    
+
 <NumberInput @bind-Value="InputModel.Age" Label="Age" Validation="() => InputModel.Age" />
 ```
 

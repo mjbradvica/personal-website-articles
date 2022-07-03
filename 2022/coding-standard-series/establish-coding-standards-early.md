@@ -36,4 +36,4 @@ Most language teams readily publish a set of recommended rules. Reference these 
 
 ## Conclusion
 
-Fighting over coding styles and rules is an exercise in futility. How you structure your code is entirely  an internal team detail. Air your grievances early, then hit the ground coding. If your team is unable to come to a conclusion, then defer to the standard for that language or framework.
+Fighting over coding styles and rules is an exercise in futility. How you structure your code is entirely an internal team detail. Air your grievances early, then hit the ground coding. If your team is unable to come to a conclusion, then defer to the standard for that language or framework.

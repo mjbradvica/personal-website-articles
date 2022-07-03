@@ -99,7 +99,7 @@ public class StateStore
         {
             { typeof(IncreaseCounter), action => State.Value += (IncreaseCounter) action).Amount},
             { typeof(DecreaseCounter), action => State.Value += (DecreaseCounter) action).Amount},
-        };    
+        };
     }
 
     public void Dispatch(IAction action)

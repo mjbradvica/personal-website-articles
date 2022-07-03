@@ -98,7 +98,7 @@ public interface IPersonRepository
     List<People> GetByName(string name);
     List<People> GetByNameAndAge(string name, int age);
     List<People> GetByStatusOrAddress(Status status, int zipcode);
-    
+
     // There are probably many more methods in this interface all like the ones above.
 }
 ```
