@@ -1,105 +1,114 @@
 # 2022 ideas
 
-* Two NuGet packages that should be in every .NET project
+- Two NuGet packages that should be in every .NET project
 
-* Two npm packages that should be in every Javascript project
+- Two npm packages that should be in every Javascript project
 
-* Four things all well engineered software contains
+- Four things all well engineered software contains
 
-  * Some kind of DevOps pipeline
-  * Strongly enforced coding standards
-  * A clearly defined architecture, whatever it is
-  * Easily understandable onboarding documentation
+  - Some kind of DevOps pipeline
+  - Strongly enforced coding standards
+  - A clearly defined architecture, whatever it is
+  - Easily understandable onboarding documentation
 
-* Choosing between EF, Dapper, Nhibernate, ADO.NET
-  * Advantages-disadvantages of all four
-  * Adv/Dis between EF code first, db first, db from model
+- Choosing between EF, Dapper, Nhibernate, ADO.NET
 
-* The beauty that are common interfaces (make it abstract)
+  - Advantages-disadvantages of all four
+  - Adv/Dis between EF code first, db first, db from model
 
-* If you are keep repeating yourself, something needs to change
+- The beauty that are common interfaces (make it abstract)
 
-* NBaseRepository repo and its future
+- If you are keep repeating yourself, something needs to change
 
-* Refactoring your Data Access layer (series)
-  * The purpose of the Repository
-  * Extracting predicates from queries
-  * Using query objects
-  * Moving to a common base repository
-  * Using NPredicateBuilder for queries
+- NBaseRepository repo and its future
 
-* Understanding conditional AND/OR in LINQ statements
+- Refactoring your Data Access layer (series)
 
-* AutoMapper does not belong in any back-end code
+  - The purpose of the Repository
+  - Extracting predicates from queries
+  - Using query objects
+  - Moving to a common base repository
+  - Using NPredicateBuilder for queries
 
-* Remember that MediatR is a service locator, use it appropriately
+- Understanding conditional AND/OR in LINQ statements
 
-* Ignoring technical debt will cost you dearly later (make investing costs comparison, compounding fees)
+- AutoMapper does not belong in any back-end code
 
-* Software is your business. Not the other way around.
+- Remember that MediatR is a service locator, use it appropriately
 
-* Consistently average software is better than occasionally good software
+- Ignoring technical debt will cost you dearly later (make investing costs comparison, compounding fees)
 
-* C# equality cheat sheet
+- Software is your business. Not the other way around.
 
-* When to use an interface (mock or different implementations)
+- Consistently average software is better than occasionally good software
 
-* An interface doesn't mean just an interface
+- C# equality cheat sheet
 
-* Finding a common interface is best thing you can do
+- When to use an interface (mock or different implementations)
 
-* From delegates to LINQ, everything is a function
+- An interface doesn't mean just an interface
 
-* Common configurations for js frameworks in VS Code
+- Finding a common interface is best thing you can do
 
-* Applying prettier with the new husky
+- From delegates to LINQ, everything is a function
 
-* Where should you validate objects
+- Common configurations for js frameworks in VS Code
 
-* What are your engineering values? (make a list, prioritize, use to make decisions)
+- Applying prettier with the new husky
 
-* Code is a by-product via your processes, (testing, devops, technical debt, architecture, standards, documentation) "gone in 60 seconds quote, speed is a by-product"
+- Where should you validate objects
+
+- What are your engineering values? (make a list, prioritize, use to make decisions)
+
+- Code is a by-product via your processes, (testing, devops, technical debt, architecture, standards, documentation) "gone in 60 seconds quote, speed is a by-product"
 
 ## Q4 Articles
 
-* Alternatives to Blazor
-  * ASP.NET Core Razor Pages
-  * ASP.NET Core MVC
-  * Angular
-  * React
+- Alternatives to Blazor
 
-* Reasons to go Blazor Adjacent
-  * You don't need a fully interface UI
-  * Talent doesn't have the right skills
-  * Need more framework maturity
-  * Technical stack is already heave Javascript
+  - ASP.NET Core Razor Pages
+  - ASP.NET Core MVC
+  - Angular
+  - React
 
-* Adding Typescript to an ASP.NET Core Projects
-  * Typescript is a more type-safe and safer coding method
-  * Expand in ESLint, Prettier, ect
+- Reasons to go Blazor Adjacent
 
-* Using ASP.NET Core Tag Helpers to abstract the UI
-  * Easier code base for developers to work in
+  - You don't need a fully interface UI
+  - Talent doesn't have the right skills
+  - Need more framework maturity
+  - Technical stack is already heave Javascript
 
-* Task-Based UI's as Business value
-  * Task-based UI provides details for changes
-  * person changes address/card means changes in behavior
-  * Three part of refactoring to task-based UI
+- Adding Typescript to an ASP.NET Core Projects
 
-* Custom colors in Bulma
-  * adding secondary and tertiary colors in bulma
+  - Typescript is a more type-safe and safer coding method
+  - Expand in ESLint, Prettier, ect
 
-* Leverage front-end code generation from Swagger
-  * Less time spent creating boilerplate front ends
+- Using ASP.NET Core Tag Helpers to abstract the UI
 
-* A base page pattern for ASP.NET Core Razor Pages
-  * Reduce your code base
+  - Easier code base for developers to work in
 
-1) Blazor Prop value
-2) Alternative to Blazor
-3) Task based UI
-4) Reason to go Blazor adjacent
-5) Reasons to make the investment in Web Assembly
+- Task-Based UI's as Business value
+
+  - Task-based UI provides details for changes
+  - person changes address/card means changes in behavior
+  - Three part of refactoring to task-based UI
+
+- Custom colors in Bulma
+
+  - adding secondary and tertiary colors in bulma
+
+- Leverage front-end code generation from Swagger
+
+  - Less time spent creating boilerplate front ends
+
+- A base page pattern for ASP.NET Core Razor Pages
+  - Reduce your code base
+
+1. Blazor Prop value
+2. Alternative to Blazor
+3. Task based UI
+4. Reason to go Blazor adjacent
+5. Reasons to make the investment in Web Assembly
 
 ## Ryan Azure Topics (distributed systems)
 

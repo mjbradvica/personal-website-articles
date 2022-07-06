@@ -28,7 +28,7 @@ public class StateStore
 {
     private readonly Dictionary<Type, Action<IAction>> _actions;
 
-    public InitialState State { get; } 
+    public InitialState State { get; }
 
     public StateStore()
     {

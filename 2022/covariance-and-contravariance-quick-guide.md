@@ -21,8 +21,8 @@ Covariance is denoted by the "out" keyword. Contravariance uses the "in" keyword
 
 A few rules to remember:
 
-1) They only apply to generic interfaces
-2) They only use uni-directional flow
+1. They only apply to generic interfaces
+2. They only use uni-directional flow
 
 The following interface is not possible:
 

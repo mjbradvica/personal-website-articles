@@ -1,15 +1,15 @@
 # Using SASS in ASP.NET Core, including Blazor
 
 > Note: This articles was updated in December 2021 to reflect changes to
-how Sass is transpiled. As [LibSass is now depreciated](https://sass-lang.com/blog/libsass-is-deprecated), this article now uses a Dart Sass implementation.
+> how Sass is transpiled. As [LibSass is now depreciated](https://sass-lang.com/blog/libsass-is-deprecated), this article now uses a Dart Sass implementation.
 
 [Sass](https://sass-lang.com/) is a css-preprocessor that allows us to create stylesheets for web applications using mixins, variables, functions, and nested rules. These SASS files are then compiled into standard css files for our use. What is nice, ASP.NET Core and Blazor can integrate Sass into the build process. This allows us to write our stylesheets in sass first or even import and modify existing frameworks. Today, we are going to use sass to import the Bulma library and change the primary color with just a few lines of code.
 
 A few things are necessary:
 
-1) An updated version of dotnet Core
-2) An updated version of Node.js
-3) In Visual Studio, start a new ASP.NET Core Web or Blazor project
+1. An updated version of dotnet Core
+2. An updated version of Node.js
+3. In Visual Studio, start a new ASP.NET Core Web or Blazor project
 
 The first thing we need to do is make sure our tooling is correct for how Visual Studio will use Grunt.
 
@@ -68,34 +68,32 @@ Add the following contents to your new gruntfile:
 /// <binding AfterBuild='default' />
 
 module.exports = function (grunt) {
+  var sass = require("sass");
 
-    var sass = require('sass');
+  grunt.initConfig({
+    sass: {
+      options: {
+        implementation: sass,
+        sourceMap: true,
+        outputStyle: "compressed",
+      },
+      dist: {
+        files: [
+          {
+            expand: true,
+            cwd: "Styles",
+            src: ["**/*.scss"],
+            dest: "wwwroot/css",
+            ext: ".css",
+          },
+        ],
+      },
+    },
+  });
 
-    grunt.initConfig({
+  grunt.loadNpmTasks("grunt-sass");
 
-        sass: {
-            options: {
-                implementation: sass,
-                sourceMap: true,
-                outputStyle: 'compressed'
-            },
-            dist: {
-                files: [
-                    {
-                        expand: true,
-                        cwd: "Styles",
-                        src: ["**/*.scss"],
-                        dest: "wwwroot/css",
-                        ext: ".css"
-                    }
-                ]
-            }
-        }
-    });
-
-    grunt.loadNpmTasks('grunt-sass');
-
-    grunt.registerTask('default', ['sass']);
+  grunt.registerTask("default", ["sass"]);
 };
 ```
 
@@ -113,14 +111,13 @@ I am going to change the primary color in Bulma from its default of turquoise to
 @charset "utf-8";
 
 // Define a variable.
-$orchird: #AF69EF;
+$orchird: #af69ef;
 
 // Update bulma's primary color
 $primary: $orchird;
 
 // Import the rest of bulma
 @import "../node_modules/bulma/bulma";
-
 ```
 
 All we have done is updated the primary color and imported the rest of the library.
@@ -140,20 +137,21 @@ Our index.html with our css import:
 ```html
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
     <title>SassBlazor</title>
     <base href="/" />
     <link href="css/color.css" rel="stylesheet" />
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="app">Loading...</div>
-<script src="_framework/blazor.webassembly.js"></script>
-</body>
-
+    <script src="_framework/blazor.webassembly.js"></script>
+  </body>
 </html>
 ```
 

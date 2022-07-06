@@ -27,7 +27,7 @@ You can use routes with parameters as well:
 You can now update your NavLinks to the following:
 
 ```html
-<NavLink href="@PageRoutes.Counter">
+<NavLink href="@PageRoutes.Counter"></NavLink>
 ```
 
 Your components will use the "@attribute" directive instead of "@page" now.

@@ -2,28 +2,28 @@
 
 ## Dependency Inversion
 
-Dependency Inversion is a *principle* that comes from the set of SOLID principles of software engineering. It can be summarized by the following:
+Dependency Inversion is a _principle_ that comes from the set of SOLID principles of software engineering. It can be summarized by the following:
 
-* Use abstractions such as an interface or base class
-* These abstractions should not depend on details
+- Use abstractions such as an interface or base class
+- These abstractions should not depend on details
 
 This can be realized in a number of ways:
 
-* Layering your application to separate presentation, data, and business logic
-* Having layers interact with each other via interfaces
-* Returning abstractions from use cases instead of raw domain objects
+- Layering your application to separate presentation, data, and business logic
+- Having layers interact with each other via interfaces
+- Returning abstractions from use cases instead of raw domain objects
 
 Dependency Inversion is concerned with how your application as a whole communicates among boundaries.
 
 ## Inversion of Control
 
-Inversion of Control is a *principle* concerned with separating abstractions from implementations. Inversion of Control is analogous, yet distinct, from Dependency Inversion. It is implemented at the module level of your application through a number of commonly known patterns and techniques.
+Inversion of Control is a _principle_ concerned with separating abstractions from implementations. Inversion of Control is analogous, yet distinct, from Dependency Inversion. It is implemented at the module level of your application through a number of commonly known patterns and techniques.
 
-* Event-Driven Design
-* Service Locator
-* Factory Method and Factory Pattern
-* Strategy Pattern
-* Dependency Injection
+- Event-Driven Design
+- Service Locator
+- Factory Method and Factory Pattern
+- Strategy Pattern
+- Dependency Injection
 
 Each of these patterns is built around separating what a module wants to do and how it is performed.
 
@@ -37,13 +37,13 @@ Most of these techniques are used at the module level such as inside of an appli
 
 ## Dependency Injection
 
-A type of *technique*, Dependency Injection is an implementation of Inversion of Control. It is concerned with how objects should define relationships with other objects. Dependency Injection states there are three ways to give an object a dependency:
+A type of _technique_, Dependency Injection is an implementation of Inversion of Control. It is concerned with how objects should define relationships with other objects. Dependency Injection states there are three ways to give an object a dependency:
 
-* Constructor
-* Method
-* Property
+- Constructor
+- Method
+- Property
 
-Dependency Injection is one example of aggregation. Given an object *n*, all dependencies of *n* should have independent life cycles.
+Dependency Injection is one example of aggregation. Given an object _n_, all dependencies of _n_ should have independent life cycles.
 
 ## Summary
 
