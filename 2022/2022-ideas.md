@@ -116,9 +116,9 @@ Business possibilities with DDD -> moving from solo solution to DDD
 
 Aligning your business domain in code -> modeling in DDD
 
-heavily favored business transactions -> implementing cqrs in applications
+heavily favored business transactions -> implementing CQRS in applications
 
-rarely do you "know" you need microservices -> your architecture is learned over time
+rarely do you "know" you need micro-services -> your architecture is learned over time
 
 architecture for distributed systems -> azure services for microservices
 
