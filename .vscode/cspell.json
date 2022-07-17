@@ -1,3 +1,9 @@
 {
-  "words": ["Contravariance"]
+  "words": [
+    "Blazor",
+    "Contravariance",
+    "CQRS",
+    "LINQ",
+    "Microservices"
+  ]
 }
