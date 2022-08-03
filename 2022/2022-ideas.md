@@ -1,9 +1,5 @@
 # 2022 ideas
 
-- Two NuGet packages that should be in every .NET project
-
-- Two npm packages that should be in every Javascript project
-
 - Four things all well engineered software contains
 
   - Some kind of DevOps pipeline
@@ -120,7 +116,7 @@ heavily favored business transactions -> implementing CQRS in applications
 
 rarely do you "know" you need micro-services -> your architecture is learned over time
 
-architecture for distributed systems -> azure services for microservices
+architecture for distributed systems -> azure services for Microservices
 
 utilization with distributed systems -> containers, container orchestration
 
