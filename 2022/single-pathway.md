@@ -24,8 +24,8 @@ You can enforce a single pathway by attacking the problem at multiple angles:
 
 3. Choosing Simplicity - As the architect of an application, choosing to delay decisions until the last possible moment can pay dividends. You probably do not require Docker or that fancy ORM on day one of the project. Piling on layers of libraries and frameworks early only serves to create multiple paths that slow down development. There will be some decisions you must make early, such as your front-end framework. I must stress the importance of choosing boring and simple solutions and not being swept away by the latest carnival lights and sounds that a new framework may promise. Customers don't care about the internal guts of your application. They just want it to work.
 
-4. Reducing Options - Never let 
+4. Reducing Options - Don't dismiss fundamental programming skills as methods to reduce options and simplify your application. Encapsulation, well-designed interfaces, and applying SOLID principles to your code base all have utility. You can reduce options by finding redundancy and extracting a common interface.
 
 ## Conclusion
 
-A dirty secret not only in software engineering is that many times you need to make decision
+Good software reduces options both for its developers and consumers. Giving either party too many options hampers customer engagement and developer effectiveness. You should only give people enough rope to do their job, but not enough to hang themselves.
