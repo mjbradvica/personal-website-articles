@@ -1,8 +1,11 @@
 # Your Application Is NOT The Data(base)
 
 If you took a survey on what your customers desire when they interact with your software, what do you think they would say?
+
 Probably an application that is modern looking, responsive, predictable, and--crucially--not frustrating.
+
 So, then, why are we (as developers) obsessed with the correct table associations, foreign key constraints, and ensuring everything is in proper third normal form?
+
 This is a disconnect that engineers experience daily because we focus on what the application is doing from a development perspective instead of a customer perspective.
 
 ## Customers Don't Know What Cassandra Is
