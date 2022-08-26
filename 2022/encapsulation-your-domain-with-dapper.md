@@ -13,7 +13,7 @@ public async Task<IEnumerable<MyObject>> GetAll()
 
 Dapper gives you a powerful way of performing queries with minimal overhead. The issue however, is the lack of encapsulation support for mapped objects.
 
-Your objects that are returned from Dapper for the most part need to be POCO's. Dapper is able to map simple types to constructor. However complex types are outside of the libraries ability to construct and map to a custom constructor.
+Your objects that are returned from Dapper for the most part need to be POCO's. Dapper is able to map simple types to constructors. However complex types are outside the libraries' ability to construct and map to a custom constructor.
 
 So while this is acceptable for Dapper:
 
@@ -52,7 +52,9 @@ public class MyObject
 }
 ```
 
-With Dapper you need to choose between POCO's and a rich domain. However we can use an alternative that allows us to utilize Dapper but keep the rich and encapsulated domain that we desire. It just requires us to have Dapper return a simple POCO which represents a one-to-one relationship with our database tables that will will map to a domain object.
+> Note: The ZonedDateTime type comes from the NodaTime library.
+
+Dapper requires us to choose between POCO's and a rich domain. However we can use an alternative that allows us to utilize Dapper but keep the rich and encapsulated domain that we desire. It just requires us to have Dapper return a simple POCO which represents a one-to-one relationship with our database tables that will will map to a domain object.
 
 We will now express our Dapper object as a regular POCO:
 
@@ -103,43 +105,25 @@ public class CustomerRecord
 }
 ```
 
-This breaks encapsulation in multiple ways:
-
-1. Objects can be created in an infinite number of possible states
-2. Object properties can be changed at any time for any reason
-3. Object validation at creation is not internalized
-
-We need our object to look like this:
+Then simply our method as so:
 
 ```csharp
-public class MyObject
+public async Task<IReadOnlyList<Customer>> GetAllCustomers()
 {
-    public MyObject(DateTime timestamp)
-        :this(Guid.NewGuid(), timestamp)
-    {
-    }
-
-    public MyObject(Guid id, DateTime timestamp)
-    {
-        Validator.ValidateId(id);
-        Validator.ValidateDateTime(timestamp);
-
-        Id = id;
-        Timestamp = timestamp;
-    }
-
-    public Guid Id { get; }
-
-    public DateTime Timestamp { get; }
-
-    //additional methods and properties
+    return (await _sqlConnection.QueryAsync<CustomerRecord>("SELECT * FROM dbo.Customer"))
+        .Select(record => record.FromRecord())
+        .ToList();
 }
 ```
 
-Our object now as full encapsulation over its creation process and public API. Its' validation is also internalized and will reject non-valid parameters.
+> It is important to keep our POCO's in the same project as our data access code. The domain or application layers should not be aware they exist.
 
-The issue is that Dapper is unable to map properly to private setters or call custom constructors.
+We can now use both Dapper and keep our rich encapsulated domain. This gives us the best of both worlds--the simplicity of Dapper and the correctness of encapsulation.
 
-## You May Just Not Need Dapper
+## You May Not Need Dapper
 
-Encapsulating our domain is more important than how we interact with our data.
+The main reason people decide to move away from ADO.NET is that Dapper is able to remove much of the boilerplate required. A developer can just write some SQL and get an object back with zero hassle. The irony of wanting to keep our application encapsulated with Dapper is that we are still required to perform the most frustrating part about ADO, the manual mapping process.
+
+The correct decision may be a simple base class that removes the boilerplate for us. If we have to remove the biggest advantage about Dapper--the prudent decision may be to not use it in the first place.
+
+Encapsulating our domain is far more important than how we interact with our data.
