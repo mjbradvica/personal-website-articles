@@ -94,15 +94,15 @@ public abstract class BaseRepository
 
 Breaking down our base class:
 
-* We accept an SqlConnection via the constructor
-* Our ExecuteCommand method will accept some sql, wrap the command in a transaction, and in the event of some undefined behavior, our transaction will rollback
-* Our ExecuteQuery method will accept some sql alongside a mapping function to convert a result set into the type we specify
+* We accept an SqlConnection via the constructor.
+* Our ExecuteCommand method will accept some SQL, wrap the command in a transaction, and--in the event of some undefined behavior--our transaction will rollback
+* Our ExecuteQuery method will accept some SQL alongside a mapping function to convert a result set into the type we specify.
 
-We can now reuse this base class in our entire application.
+Now, we can now reuse this base class throughout our entire application.
 
 ## Implementation
 
-For our example we will use a simple Customer class:
+For our example, we will use a simple Customer class:
 
 ```csharp
 public class Customer
@@ -155,7 +155,7 @@ Our example above shows us passing the SqlConnection to our base class and utili
 
 ## Query Reuse
 
-A wonderful situation we now have is our mapping function can be re-used for different queries. If we wanted to add a method to return a single customer by their identifier, the implementation would be quick and easy.
+We now have a wonderful situation, wherein our mapping function can be re-used for different queries. If we want to add a method in order to return a single customer by their identifier, the implementation would be quick and easy.
 
 Our customer repository would now become:
 
@@ -193,6 +193,6 @@ We have extracted our mapping function and moved it to a variable. This allows u
 
 ## Conclusion
 
-If what we have done today feels very similar to Dapper, you are correct. Dapper itself is thin wrapper around ADO.NET that will execute SQL, but also performs some automatic object mapping. The drawback is that Dapper is incapable of mapping to private setters or calling constructors--which means we still need to conduct some manual mapping if we want to enforce encapsulation in the domain.
+If what we have done today feels very similar to Dapper, you are correct. Dapper, itself, is a thin wrapper around ADO.NET that will execute SQL, but also performs some automatic object mapping. The drawback is that Dapper is incapable of mapping complex objects--which means we still need to conduct some manual mapping if we want to enforce encapsulation in the domain.
 
 Our implementation gives us a lot of the same niceties as Dapper, but we only need a single conversion to preserve our domain's encapsulation.
