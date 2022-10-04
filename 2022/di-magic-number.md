@@ -1,0 +1,1 @@
+only inject 4-5 deps, 6 is too many
