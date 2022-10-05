@@ -32,7 +32,7 @@ export default function useState<T>(initial: T): [state: Ref<T>, setState: (newS
 }
 ```
 
-And you can use it like a normal useState hook.
+And we can use it like a normal useState hook.
 
 ```typescript
 <script setup lang="ts">
