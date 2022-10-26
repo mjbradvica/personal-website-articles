@@ -6,6 +6,7 @@
     "CQRS",
     "LINQ",
     "Microservices",
-    "Noda"
+    "Noda",
+    "unmanaged"
   ]
 }
