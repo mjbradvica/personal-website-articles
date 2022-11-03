@@ -18,14 +18,14 @@ This is an unnecessary feature in Vue that should be avoided entirely.
 
 ## Issues
 
-Compared to a callback which gives you:
+Compare this to a callback, which gives you:
 
 1. Built in type safety
 2. No strings to deal with
 3. No boilerplate to define emits
 4. A uniform convention with other front-end frameworks
 
-### Emits have no built in type safety
+### Emits have no built-in type safety
 
 Callbacks in Vue are type safety because you define the delegate in the component properties.
 
@@ -39,7 +39,7 @@ const properties = defineProps<MyComponentProperties>();
 </script>
 ```
 
-Components events are by default not type safe. They offer you the ability to add in type safety like so.
+Components events are, by default, not type safe. They offer you the ability to add in type safety like so:
 
 ```typescript
 <script setup lang="ts">
@@ -50,7 +50,7 @@ const emit = defineEmits<{
 </script>
 ```
 
-There is no need to do this if you can accomplish the same thing in your properties definition file.
+There is no need to do this if you can accomplish the same thing in your properties' definition file.
 
 ### Emits require strings
 
@@ -64,6 +64,12 @@ This is extra busy work when a callback requires none of this:
 
 ```typescript
 <button @click="handleClick">Im A Button</button>
+
+<script setup lang="ts">
+const handleClick = (event: Event): void => {
+  // handle
+};
+</script>
 ```
 
 ### Emits require boilerplate definitions
@@ -76,7 +82,7 @@ defineEmits(['inFocus', 'submit'])
 </script>
 ```
 
-Callbacks are again, defined in your properties interface and do not require such configuration.
+Again callbacks are defined in your properties interface and do not require such configuration.
 
 ### Emits are not uniform
 
@@ -84,4 +90,4 @@ You handle events in React with callbacks. You handle events in Angular with cal
 
 ## Conclusion
 
-Component events in Vue are a useless feature. They offer a solution for a problem that does not exists. They increase your line count while reducing code quality. Use normal callbacks passed via properties.
+Component events in Vue are a useless feature. They offer a solution to a problem that does not exist. They increase your line count,while also diminishing code quality. Use normal callbacks passed via properties.
