@@ -43,7 +43,7 @@ public class Service : IService
 }
 ```
 
-Testing this service will required you to declare six mocks:
+Testing this service will require you to declare six mocks:
 
 ```csharp
 public class ServiceTests
