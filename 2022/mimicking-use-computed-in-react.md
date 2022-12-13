@@ -23,7 +23,7 @@ const [full, setFull] = useState<string>("");
 
 useEffect(() => {
     setFull(first + last);
-}, [first, last])
+}, [first, last]);
 ```
 
 In React, we need to create a state variable, then update this variable via a useEffect hook. In many cases, this is necessary if we must update the variable at a later time. Since this use case is a pure function, we need only the result of the function. Creating our own version of the computed function would allow us to inline our code and keep the result pure.
@@ -51,6 +51,7 @@ And here is how we use it:
 ```typescript
   const [first, setFirst] = useState<string>("");
   const [last, setLast] = useState<string>("");
+  
   const fullName = useComputed(
     "",
     useCallback(() => first + last, [first, last])
