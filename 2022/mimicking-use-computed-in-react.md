@@ -2,7 +2,7 @@
 
 ## Background
 
-One of the nice features in Vue is the [useComputed](https://vuejs.org/guide/essentials/computed.html#basic-example) composable. It allows use to create a pure function that reacts in accordance to the callback passed to it.
+One of the best features in Vue is the [useComputed](https://vuejs.org/guide/essentials/computed.html#basic-example) composable. It allows use to create a pure function that reacts in accordance to the callback passed to it.
 
 One use of the useComputed composable is to generate a last name from a first and last:
 
@@ -13,7 +13,7 @@ const last = ref<string>("");
 const lastName = computed<string>(() => first + last);
 ```
 
-Here is how we would normal concatenate two names in React:
+Here is how we would normally concatenate two names in React:
 
 ```typescript
 const [first, setFirst] = useState<string>("");
@@ -26,7 +26,7 @@ useEffect(() => {
 }, [first, last])
 ```
 
-In React we need to create both a state variable, then update this variable via a useEffect hook. In many cases, this is necessary if we have to update the variable at a later time. Since this use case is a pure function, we only need the result of the function. Creating our own version of the computed function would allow us to inline our code and keep the result pure.
+In React, we need to create a state variable, then update this variable via a useEffect hook. In many cases, this is necessary if we must update the variable at a later time. Since this use case is a pure function, we need only the result of the function. Creating our own version of the computed function would allow us to inline our code and keep the result pure.
 
 ## useComputed Hook
 
@@ -60,6 +60,6 @@ And here is how we use it:
 Unlike our Vue counterpart we need to have a few extras:
 
 - Our state variable needs to be provided with an initial value.
-- Our function *must* be wrapped in a useCallback, if we omit this it will cause an infinite loop.
+- Our function *must* be wrapped in a useCallback; if we omit this it will cause an infinite loop.
 
 Our end result allows us to remove some of the ceremony around create two separate hooks and wiring them together. As long as we remember to wrap our function in a useCallback hook, the result is a net positive.
