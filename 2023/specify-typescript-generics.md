@@ -1,6 +1,6 @@
 # Specify TypeScript Generics
 
-The reality of programming languages is that generics are implemented different in each language. C++, C#, and Java all have different rules and implementations for generics--TypeScript is no different.
+The reality of programming languages is that generics are implemented differently in each language. C++, C#, and Java all have different rules and implementations for generics--TypeScript is no different.
 
 One of the rules with TypeScript generics is that the type inference is not consistent.
 
