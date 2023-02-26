@@ -2,9 +2,9 @@
 
 Content projection in React, Vue, and Angular follows a familiar pattern. A parent component allows for an unknown child to be rendered inside a section of the component. This allows for the parent to act as an anonymous wrapper.
 
-The important word here is "anonymous". The key to this relationship is the parent has no knowledge of the child and the child has no knowledge of its parent. 
+The important word here is "anonymous". The key to this relationship is the parent has no knowledge of the child and the child has no knowledge of its parent.
 
-> Because content project allows you to pass anything--encapsulation of component internals *must* be preserved.
+> Because content project allows you to pass anything--encapsulation of component internals _must_ be preserved.
 
 ## Slots Are An Open Contract
 
@@ -16,8 +16,8 @@ Multi-Slots in Vue:
 
 ```typescript
 <template>
-    <slot name="primary"></slot>
-    <slot name="secondary"></slot>
+  <slot name="primary"></slot>
+  <slot name="secondary"></slot>
 </template>
 ```
 
@@ -25,29 +25,43 @@ The children can use the parent as so:
 
 ```typescript
 <template>
-    <template #primary>
-        <p>Inside primary.</p>
-    </template>
-    <template #secondary>
-        <p>Inside secondary.</p>
-    </template>
+  <template #primary>
+    <p>Inside primary.</p>
+  </template>
+  <template #secondary>
+    <p>Inside secondary.</p>
+  </template>
 </template>
 ```
 
-With multiple slots our encapsulation of the parent component has been broken. The child is now aware of the internals of the parent. A consequence of this internal knowledge is that all child components have a dependency on the parents' slot names. If a slot is changed in the parent, every child will need to be updated.
+With multiple slots the encapsulation of the parent component is broken. The child is now aware of the internals of the parent. A consequence of this internal knowledge is that all child components have a hard dependency on the parents' slot names. If a slot is changed in the parent, every child will need to be updated.
 
-## Props Allow For More Defined Components
+## Other Content Projection Fallacies
 
-The first alternative for using multiple slots should be to use standard props instead. 
+Named slots are not the only abused feature of content projection. Vue allows you to dynamically assign names to slots-you can even pass props! These are fatally flawed features offered by Vue that should be avoided.
 
-## content projections allows you to pass anything...
+With dynamic slots, you are able to name and change the name of a slot at runtime.
 
-> Don't be cute with content projection. It should be used as an independent wrapper where both the child and parent component have zero knowledge about the internals of the other.
+```typescript
+<template #[mySlotName]>
+    // Content in here
+</template>
+```
 
-## don't pass props to slots, when you can just pass props to a component
+Just like before, you have a hard dependency between a parent and child component where one should not exist. This one has a potential for even more errors because unlike the previous one, which was static, this can change-leading to a higher change for bugs in your software.
 
-## can't enforce required children
+Vue also allows you to pass props to slots. This is also completely unnecessary. If you find yourself passing props to a component it is important to step back from your work and analyze the problem you are attempting to solve.
 
-## sign your component is doing too much
+> Any problem can be solved in modern front-end development via composition, higher-order components, callbacks, and normal props.
 
-## this is what props is for
+If you are attempting to pass props to a slot in a TypeScript project, you are breaking the ethos of TypeScript-a language whose purpose revolves around hard types and intellisense. Because the child in the slot may be any component you are not guaranteed a matching interface. Passing too many props breaks the principle of Interface Segregation.
+
+## Boring Is Beautiful
+
+If you are ever tempted by the allure of either multi-slot content projection, dynamic slot names, or passing props to slots, fall back on these options first.
+
+1. Re-thinking your component organization and flow
+2. A higher-order component
+3. Breaking up a complex component into smaller ones
+
+Content projection in all front-end frameworks is an _explicit_ contract between a parent and a single child. Holding firm to this concept will product better software that is much easier to maintain in the long-term.
