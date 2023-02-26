@@ -34,7 +34,7 @@ The children can use the parent as so:
 </template>
 ```
 
-With multiple slots our encapsulation of the parent component has been broken. The child is now aware of the internals of the parent. A consequence of this internal knowledge is that all child components have a dependency on the parents slot names. If a slot is changed in the parent, every child will need to be updated.
+With multiple slots our encapsulation of the parent component has been broken. The child is now aware of the internals of the parent. A consequence of this internal knowledge is that all child components have a dependency on the parents' slot names. If a slot is changed in the parent, every child will need to be updated.
 
 ## Props Allow For More Defined Components
 
