@@ -2,9 +2,9 @@
 
 Content projection in React, Vue, and Angular follows a familiar pattern. A parent component allows for an unknown child to be rendered inside a section of the component. This allows for the parent to act as an anonymous wrapper.
 
-The important word here is "anonymous". The key to this relationship is the parent has no knowledge of the child and the child has no knowledge of its parent.
+The important word here is "anonymous". The key to this relationship is the parent has no knowledge of the child, and the child has no knowledge of the parent.
 
-> Because content project allows you to pass anything--encapsulation of component internals _must_ be preserved.
+> Because content projection allows you to pass anything--encapsulation of component internals _must_ be preserved.
 
 ## Slots Are An Open Contract
 
@@ -64,4 +64,4 @@ If you are ever tempted by the allure of either multi-slot content projection, d
 2. A higher-order component
 3. Breaking up a complex component into smaller ones
 
-Content projection in all front-end frameworks is an _explicit_ contract between a parent and a single child. Holding firm to this concept will product better software that is much easier to maintain in the long-term.
+Content projection in all front-end frameworks is an _explicit_ contract between a parent and a single child. Holding firm to this concept will produce better software that is much easier to maintain in the long-term.
