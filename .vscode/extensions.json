@@ -3,6 +3,7 @@
     "yzhang.markdown-all-in-one",
     "shd101wyy.markdown-preview-enhanced",
     "davidanson.vscode-markdownlint",
-    "streetsidesoftware.code-spell-checker"
+    "streetsidesoftware.code-spell-checker",
+    "pkief.material-icon-theme"
   ]
 }
