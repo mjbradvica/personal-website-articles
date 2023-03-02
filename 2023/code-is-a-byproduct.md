@@ -2,7 +2,7 @@
 
 "Control, vision, determination. These are the three fundamental components of the new generation race car driver. Speed is a by-product."
 
-The line from the move Gone in 60 Seconds perfectly encapsulates the essence of software engineering. Except instead of driving fast, we are producing code. In the scene, Randall Raines played by Nicholas Cage tries to explain to new drivers that going fast is not your main objective. He talks about the pre-cursors to driving, that if perfected, will result in the speed the driver desires.
+The line from the move Gone in 60 Seconds perfectly encapsulates the essence of software engineering. Except instead of driving fast, we are producing code. In the scene, Randall Raines played by Nicholas Cage tries to explain to new drivers that going fast is not your main objective. He talks about the pre-cursors to driving, if perfected, will result in the speed the driver desires.
 
 Software engineering is no different. Except instead of control, vision, and determination, the three fundamental components of software are tooling, testing, and DevOps. Every successful project has these three items in some form. Any modern application is gambling with the success of the project they are not built into the application from day one.
 
@@ -13,6 +13,7 @@ Tooling may relate to any of the following:
 - IDE or Editor and any respective plugins and settings files
 - Documentation either done manually or automatically such as Storybook
 - Code Analysis tools such as the .NET Analyzers, ESLint, or Prettier
+- All formatting, linting, and code analysis is enforced via the CI/CD pipeline
 
 ## Testing
 
@@ -21,6 +22,7 @@ An automated suite of well written tests is the best insurance your development 
 - Force your team to write code to be tested, requiring a heightened quality
 - Provide you with a feedback loop for changes and refactoring
 - Reduce the load on manual testing, in turn reducing costs
+- Enable developers to move on and off the project with a smaller risk of domain knowledge loss
 
 ## DevOps
 
@@ -29,6 +31,7 @@ DevOps is a large umbrella that may contain but is not limited to:
 - Source Control via Git or another tool such as SVN
 - Automated pipelines that will build, test, and deploy libraries and applications
 - A sanity check against self-centered development (it works on my machine)
+- Separation of environments for developers, QA, and end-users to confirm feature and changes
 
 ## Control your Code or be Controlled
 
