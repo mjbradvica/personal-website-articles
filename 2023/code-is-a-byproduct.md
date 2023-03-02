@@ -2,9 +2,9 @@
 
 "Control, vision, determination. These are the three fundamental components of the new generation race car driver. Speed is a by-product."
 
-The line from the move Gone in 60 Seconds perfectly encapsulates the essence of software engineering. Except instead of driving fast, we are producing code. In the scene, Randall Raines played by Nicholas Cage tries to explain to new drivers that going fast is not your main objective. He talks about the pre-cursors to driving, if perfected, will result in the speed the driver desires.
+The line from the movie Gone in 60 Seconds perfectly encapsulates the essence of software engineering. Except instead of driving fast, we are producing code. In the scene, Randall Raines played by Nicholas Cage tries to explain to new drivers that going fast is not your main objective. He talks about the precursors to driving, if perfected, will result in the speed the driver desires.
 
-Software engineering is no different. Except instead of control, vision, and determination, the three fundamental components of software are tooling, testing, and DevOps. Every successful project has these three items in some form. Any modern application is gambling with the success of the project they are not built into the application from day one.
+Software engineering is no different. Except instead of control, vision, and determination, the three fundamental components of software are tooling, testing, and DevOps. Every successful project has these three items in some form. Any modern application is gambling with the success of the project if they are not built into the application from day one.
 
 ## Tooling
 
