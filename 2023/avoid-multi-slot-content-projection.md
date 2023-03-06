@@ -4,7 +4,7 @@ Content projection in React, Vue, and Angular follows a familiar pattern. A pare
 
 The important word here is _anonymous_. The key to this relationship is the parent has no knowledge of the child, and the child has no knowledge of the parent.
 
-> Because content projection allows you to pass anything encapsulation of component internals _must_ be preserved.
+> Because content projection allows you to pass anything, encapsulation of component internals _must_ be preserved.
 
 ## Slots are an Open Contract
 
