@@ -19,7 +19,6 @@ As a software engineer, when you write a test-(whether it be a unit, integration
 - Tests allow us to refactor at will and provide the confidence that behavior will remain the same
 - Tests describe behavior to other developers, acting as another form of documentation
 - Tests allow us to automate things in ways manual QA can not
-- Tests can alleviate-but not fully replace!-manual testing
 
 A failure to implement automated testing in any project is taking a major risk. It is akin to skimping on insurance and merely hoping that nothing terrible will happen. This is not a sound policy for developers.
 
