@@ -27,7 +27,7 @@ const myVariable = ref<string>('');
 versus...
 
 ```typescript
-const myVariable = ref<string>(ValueDefault.String);
+const myVariable = ref<string>(ValueDefaults.String);
 ```
 
 The first is illusive. Did you really mean to use an empty string-or did you just forget to initialize with a value? The second example is absolute. You want an empty string, and it is clear to other developers as well.
