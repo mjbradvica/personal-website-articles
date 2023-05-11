@@ -1,11 +1,8 @@
-
-<!-- any, never, unknown, object, undefined, string literal types, interfaces over types,  -->
-
 # Avoid Bad Types
 
 > I am talking about application level code here. Library code differs.
 
-TypeScript is just a different flavor of JavaScript. Anything you can do in TypeScript just gets transpiled back to plain vanilla JS. This means you can still do a lot of damage to your application by allowing for bad programming to slowly seep into your code base.
+TypeScript is just a different flavor of JavaScript. Anything you can do in TypeScript just gets transpiled back to plain vanilla JS. You can still do damage to your application by allowing for bad programming to slowly seep into your code base.
 
 A quick two second fix is to double-check that "strict" mode is enabled in your ts config.
 
@@ -24,7 +21,7 @@ Strict mode will turn on [eight separate rules](https://www.typescriptlang.org/t
 
 The more you treat TypeScript like any other static-typed language such as C# or Java the better your code base becomes.
 
-# Extending Ban Types
+## Extending Ban Types
 
 Banning certain types is rooted in removing uncertainty and undefined behavior from your application. The more certainty your application provides translates to a higher level of confidence it will perform to your expectations.
 
@@ -50,11 +47,11 @@ We are adding never, unknown, object, and and the empty object to our ban list. 
   }
 ```
 
-# Others to Avoid
+## Others to Avoid
 
 ## Enums over Inferred Literal Types
 
-In TypeScript you can have a function that looks like this:
+In TypeScript you can have a function that has this kind of return type:
 
 ```typescript
 export function directions(goLeft: boolean): "left" | "right" {
@@ -81,8 +78,12 @@ export function directions(goLeft: boolean): Directions {
 }
 ```
 
-Our refactored code does not provide a leaky abstraction is much cleaner.
+Our refactored code does not provide a leaky abstraction, and is much cleaner.
 
-## Stick to Interfaces over types
+## Interfaces over types
 
 If you are already using ESLint's strict mode. [And you should.]() The [consistent-type-definitions](https://typescript-eslint.io/rules/consistent-type-definitions/) rule is already enabled.
+
+While the differences between interfaces and types in TypeScript are minute, you should stick with interfaces. Interfaces are more straight forward and easier for other developers to work with.
+
+Keeping abstract and non-static types out of your front-end code will give you more predictability, easy-to-test code, and a more maintainable code base.
