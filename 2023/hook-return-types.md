@@ -16,7 +16,7 @@ If we are returning just a single state object, only the variable is required. N
 export default useMyHook(): string {
     const partA = useState<string>();
 
-    // Other methods and lifecycle method's here.
+    // Other methods and lifecycle methods here.
 
     return partA;
 };
@@ -31,7 +31,7 @@ export default useMyHook(): [string, number] {
     const partA = useState<string>();
     const partB = useState<number>();
 
-    // Other methods and lifecycle method's here.
+    // Other methods and lifecycle methods here.
 
     return [partA, partB];
 };
