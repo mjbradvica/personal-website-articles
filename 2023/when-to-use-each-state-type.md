@@ -19,7 +19,7 @@ Intermediate state builds on local state by taking a local state variable and in
 
 > Intermediate state = local state + switch statement.
 
-The common pattern to use for intermediate state is a reducer. A reducer simply encapsulate's the local state variable while exposing the state and a dispatch function. If you are using React, the [useReducer](https://react.dev/reference/react/useReducer) hook is build into the framework. Vue and Angular uses do not fret, it is an [easy concept to copy.](https://michaelbradvica.com/mimicking-use-reducer-in-vue-and-angular)
+The common pattern to use for intermediate state is a reducer. A reducer simply encapsulates the local state variable while exposing the state and a dispatch function. If you are using React, the [useReducer](https://react.dev/reference/react/useReducer) hook is built into the framework. Vue and Angular uses do not fret, it is an [easy concept to copy.](https://michaelbradvica.com/mimicking-use-reducer-in-vue-and-angular)
 
 Applying intermediate state requires you to ask the following questions:
 
@@ -54,7 +54,7 @@ interface MyNewComponentProperties {
 }
 ```
 
-The biggest disadvantage to this process the boilerplate that you need to add for a reducer. It requires you to define your actions, a reducer function, and any payload objects your are passing back to your reducer.
+The biggest disadvantage to this process is the boilerplate that you need to add for a reducer. It requires you to define your actions, a reducer function, and any payload objects you are passing back to your reducer.
 
 > It is a good rule to not use intermediate state unless you have at least five or more properties you are passing to multiple children.
 
@@ -68,13 +68,13 @@ Global state in Angular, React, or Vue is done via large and complex libraries s
 
 All three libraries are the reducer pattern that is injected in your application at a global level. When you add global state, you are allowing for global variables to potentially be accessed in components that should not have access to them.
 
-> Global state should use should be keep to a absolute minimum.
+> Global state use should be kept to an absolute minimum.
 
 Use global state when:
 
 - State may need to be used in many areas of the application that are in different component trees
 
-The traditional means for using global state is to handle data is that associated with the authentication of your application. Another example may be the caching of data across browsers sessions.
+The traditional means for using global state is to handle data that is associated with the authentication of your application. Another example may be the caching of data across browsers sessions.
 
 ## Conclusion
 
