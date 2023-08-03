@@ -15,13 +15,11 @@ Use local state when:
 
 ## Intermediate
 
-Intermediate state builds on local state in that you are taking a local state variable and introducing a switch statement. It is referred to intermediate state because it solves situations where you need more than just local state, but global state would be overkill.
+Intermediate state builds on local state by taking a local state variable and introducing a switch statement. It is referred to intermediate state because it solves situations where you need more than just local state, but global state would be overkill.
 
 > Intermediate state = local state + switch statement.
 
 The common pattern to use for intermediate state is a reducer. A reducer simply encapsulate's the local state variable while exposing the state and a dispatch function. If you are using React, the [useReducer](https://react.dev/reference/react/useReducer) hook is build into the framework. Vue and Angular uses do not fret, it is an [easy concept to copy.](https://michaelbradvica.com/mimicking-use-reducer-in-vue-and-angular)
-
-You application can only read the current state and dispatch actions which are used by the switch statement. This keeps your state encapsulated and pure to avoid undefined behavior into the system.
 
 Applying intermediate state requires you to ask the following questions:
 
@@ -60,16 +58,24 @@ The biggest disadvantage to this process the boilerplate that you need to add fo
 
 > It is a good rule to not use intermediate state unless you have at least five or more properties you are passing to multiple children.
 
+Use intermediate state when local state is too little, but global state would be too much.
+
 ## Global
 
 Global state in Angular, React, or Vue is done via large and complex libraries such as [Redux](https://redux.js.org/) or [NgRx](https://ngrx.io/). Vue's implementation [Pinia](https://pinia.vuejs.org/) is the easiest to understand because it's just a custom hook under the hood.
 
 > Global state = reducer + global access
 
-All three libraries are the reducer pattern that is injects in your application at a global level. When you add global state, you are allowing for global variables to potentially be accessed in components that should not have access to them.
+All three libraries are the reducer pattern that is injected in your application at a global level. When you add global state, you are allowing for global variables to potentially be accessed in components that should not have access to them.
 
 > Global state should use should be keep to a absolute minimum.
 
 Use global state when:
 
 - State may need to be used in many areas of the application that are in different component trees
+
+The traditional means for using global state is to handle data is that associated with the authentication of your application. Another example may be the caching of data across browsers sessions.
+
+## Conclusion
+
+Choosing the correct state type in your application is a learning process. A vast majority of your state will be in normal local state variables. Only a small percentage should be in intermediate or global state. As always, the more you learn and experiment with state, the better you will be at applying it.
