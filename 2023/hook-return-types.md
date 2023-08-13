@@ -1,16 +1,16 @@
 # Hook Return Types
 
-## The 3, 2, 1 Rule
+## The "3, 2, 1 Rule"
 
-We have three options for returning a hook in React, Vue, or Angular. We can choose between:
+We have three options for returning a hook in React, Vue, or Angular. We can choose amongst:
 
 - A single variable
 - Destructured array
 - Destructured object or proper interface
 
-We just need to keep the 3, 2, 1 rule in mind for knowing what we should return.
+We just need to keep the "3, 2, 1 rule" in mind what we should return.
 
-If we are returning just a single state object, only the variable is required. No need for it to be returned inside an array or object.
+If we are returning just a single state object, then only the variable is required. There is no need to return it inside an array or object.
 
 ```typescript
 export default useMyHook(): string {
@@ -39,7 +39,7 @@ export default useMyHook(): [string, number] {
 const [partA, partB] = useMyHook();
 ```
 
-Finally, with three variables, we can still return an array. But anything that returns four or more should always be an object.
+Finally, with three variables, we can still return an array; however anything that returns four or more variables should always be an object.
 
 ```typescript
 export default useMyHook(): { partA: string, partB: number, partC: Date } {
@@ -68,9 +68,9 @@ export default function useMyHook(): IMyHook {
 }
 ```
 
-## Vue Is Complicated
+## Vue is Complicated
 
-Because of how [Vue's reactivity works](https://vuejs.org/guide/reusability/composables.html#conventions-and-best-practices). We need to return naked Ref's from our hooks. While the following is possible:
+Because of how [Vue's reactivity works](https://vuejs.org/guide/reusability/composables.html#conventions-and-best-practices), we need to return naked Ref's from our hooks. While the following is possible:
 
 ```typescript
 const myHook = useMyHook();
@@ -92,13 +92,13 @@ export default useMyHook(): { partA: string, partB: number, partC: Date } {
 const myHookObject = useMyHook();
 ```
 
-Returning an object of Ref's will cause the hook to lose it's reactivity. We need to destructure the object like shown above.
+Returning an object variable will cause the hook to lose its reactivity. We need to destructure the object like so.
 
 ```typescript
 const { partA, partB, partC } = useMyHook();
 ```
 
-### There Is A Way
+### There is a Way
 
 You can get around this by wrapping your hook in a "reactive" function that will restore the reactivity to your hook.
 
@@ -106,8 +106,8 @@ You can get around this by wrapping your hook in a "reactive" function that will
 const myHookObject = reactive(useMyHook());
 ```
 
-However, I do not recommend doing this, as it may be confusing to other developers when and where this is needed.
+Yet, I do not recommend doing this, as it may be confusing to other developers when and where this is needed.
 
 ## Conclusion
 
-If you stick to the 3, 2, 1 rule, you'll provide a consistent interface to your fellow developers on how hooks can and should be interacted with. Just remember to keep your Vue hooks destructured.
+If you stick to the "3, 2, 1 Rule," you will provide your fellow developers with a consistent interface to interact with hooks. Just remember to keep your Vue hooks destructured.
