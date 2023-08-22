@@ -35,7 +35,7 @@ public class MyRequest
 
     public Guid Id { get; }
 
-    [Range(0, 5)]
+    [Required]
     public string Status { get; }
 }
 ```
