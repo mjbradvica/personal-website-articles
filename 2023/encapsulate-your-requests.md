@@ -19,7 +19,7 @@ public class MyRequest
 
 Yet, with the introduction of Swagger and Open API, the requirements have widened by now requiring full public setters as well. Public properties is how Swagger is able to distinguish your types.
 
-This puts developers in a precarious situation--we want encapsulation, but we also know that design issues that require will require to compromise in certain situations. However, this option allows us to maintain encapsulation AND preserve the ability for Swagger to work properly.
+This puts developers in a precarious situation--we want encapsulation, but we also know that design issues that require will require to compromise in certain situations. However, an option allows us to maintain encapsulation AND preserve the ability for Swagger to work properly.
 
 The [JsonConstructor](https://learn.microsoft.com/en-us/dotnet/api/system.text.json.serialization.jsonconstructorattribute?view=net-7.0) attribute is a simple addition to any request being posted. Importantly, it will not interfere with any validation attributes that are annotated on properties.
 
