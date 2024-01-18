@@ -9,4 +9,3 @@ We talk and think about our domain in terms of objects and formal nouns. We pers
 ## What's In A Name?
 
 In our domain a name is a rich object because it has rules around it and must exist in certain states-such as a first and last name must be present. The way we persist our name object is of no consequence to our method of persistance. All the persistance layer sees is two strings in a single table.
-

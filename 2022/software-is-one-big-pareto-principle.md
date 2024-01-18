@@ -8,8 +8,6 @@ As an engineer in training or a junior engineer, you are in a heightened state o
 
 ## Usage
 
-
-
 ## Complexity
 
 Many applications have a simple purpose

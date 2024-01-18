@@ -77,9 +77,7 @@ const handleClick = (event: Event): void => {
 Using a component event means you need to annotate your components with a definition for each event you intend to emit.
 
 ```typescript
-<script setup>
-defineEmits(['inFocus', 'submit'])
-</script>
+<script setup>defineEmits(['inFocus', 'submit'])</script>
 ```
 
 Again callbacks are defined in your properties interface and do not require such configuration.

@@ -2,4 +2,4 @@
 
 ## Clearly Defined Team Structure
 
-- 
+-

@@ -8,11 +8,11 @@ Value Defaults for front-end applications are very simple. A file with default v
 
 ```typescript
 const ValueDefaults = {
-  String: '',
+  String: "",
   Number: 0,
   Boolean: false,
   Date: new Date(),
-  emptyArray: <T>(): Array<T> => new Array<T>(),
+  emptyArray: <T,>(): Array<T> => new Array<T>(),
 };
 
 export default ValueDefaults;
@@ -21,7 +21,7 @@ export default ValueDefaults;
 This allows us to be absolutely explicit with the value that you are initializing in your application.
 
 ```typescript
-const myVariable = ref<string>('');
+const myVariable = ref<string>("");
 ```
 
 versus...

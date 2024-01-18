@@ -84,7 +84,7 @@ public void HandleRequest()
         Console.WriteLine(exception);
         throw;
     }
-    
+
 }
 ```
 
@@ -452,7 +452,7 @@ public class Service : IService
 public class WeatherForecastController : ControllerBase
 {
     [HttpGet(Name = "GetWeatherForecast")]
-    public IEnumerable<WeatherForecast> Get([FromServices] IService service) 
+    public IEnumerable<WeatherForecast> Get([FromServices] IService service)
     {
         // handle request
     }

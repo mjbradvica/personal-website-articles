@@ -21,11 +21,13 @@ We can solve all three of these issues with a very simple composable.
 ```typescript
 import { ref, Ref } from "vue";
 
-export default function useState<T>(initial: T): [state: Ref<T>, setState: (newState: T) => void] {
+export default function useState<T>(
+  initial: T,
+): [state: Ref<T>, setState: (newState: T) => void] {
   const currentState = ref<T>(initial) as Ref<T>;
 
   const setState = (newState: T): void => {
-      currentState.value = newState;
+    currentState.value = newState;
   };
 
   return [currentState, setState];
@@ -40,4 +42,4 @@ const [name, setName] = useState<string>("jimmy");
 </script>
 ```
 
- With our new composable, we no longer need to worry about any generic state casts. We only dereference state for getters, and state initialization is always enforced. This composable gives us three quality of life fixes that can greatly help us for the duration of our applications' lifecycle.
+With our new composable, we no longer need to worry about any generic state casts. We only dereference state for getters, and state initialization is always enforced. This composable gives us three quality of life fixes that can greatly help us for the duration of our applications' lifecycle.

@@ -75,12 +75,12 @@ Just formulating this test is already tedious. Due to the requirement of the ser
 
 The four dependency limit will save you time. It places a hard cap that keeps your codebase simple. Less code in your classes means less code you have to test.
 
-Even if a class *requires* a certain level of complexity, you have plenty of options to choose from:
+Even if a class _requires_ a certain level of complexity, you have plenty of options to choose from:
 
-* Chain of Responsibility
-* Events
-* Strategy Pattern
-* Rethinking a classes' responsibilities and boundaries
+- Chain of Responsibility
+- Events
+- Strategy Pattern
+- Rethinking a classes' responsibilities and boundaries
 
 Everything in the list above helps to delegate responsibility of a class, service, or handler to a more specifically designed, easier to test component.
 

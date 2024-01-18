@@ -20,10 +20,10 @@ What do you thing the return type is?
 You may think it is a ComputedRef of type string, but the type is actually:
 
 ```typescript
-ComputedRef<"" | "valid">
+ComputedRef<"" | "valid">;
 ```
 
-The end result is the same, but this is a [leaky abstraction](https://en.wikipedia.org/wiki/Leaky_abstraction). Our function should not leak the details of the *exact* return type. We want our function to return a string.
+The end result is the same, but this is a [leaky abstraction](https://en.wikipedia.org/wiki/Leaky_abstraction). Our function should not leak the details of the _exact_ return type. We want our function to return a string.
 
 The only thing we need to change is:
 

@@ -46,7 +46,7 @@ import { Signal, signal } from "@angular/core";
 
 export default function useReducer<T, K>(
   reducer: (currentState: T, action: K) => T,
-  defaultState: T
+  defaultState: T,
 ): [Signal<T>, (action: K) => void] {
   const state = signal<T>(defaultState);
 

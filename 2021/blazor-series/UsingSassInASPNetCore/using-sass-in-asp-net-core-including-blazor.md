@@ -135,7 +135,7 @@ The last step is to import our new css file into our application and test it out
 Our index.html with our css import:
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="utf-8" />

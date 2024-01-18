@@ -78,8 +78,8 @@ public async Task<IReadOnlyList<Customer>> GetAllCustomers()
 {
     return (await _sqlConnection.QueryAsync<CustomerRecord>("SELECT * FROM dbo.Customer"))
         .Select(record => new Customer(
-            record.Id, 
-            new Name(record.Name), 
+            record.Id,
+            new Name(record.Name),
             new ZonedDateTime(Instant.FromUnixTimeTicks(record.Timestamp_Instant), DateTimeZoneProviders.Bcl[record.Timestamp_DateTimeZoneId])))
         .ToList();
 }

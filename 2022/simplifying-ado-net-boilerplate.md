@@ -94,9 +94,9 @@ public abstract class BaseRepository
 
 Breaking down our base class:
 
-* We accept an SqlConnection via the constructor.
-* Our ExecuteCommand method will accept some SQL, wrap the command in a transaction, and--in the event of some undefined behavior--our transaction will rollback
-* Our ExecuteQuery method will accept some SQL alongside a mapping function to convert a result set into the type we specify.
+- We accept an SqlConnection via the constructor.
+- Our ExecuteCommand method will accept some SQL, wrap the command in a transaction, and--in the event of some undefined behavior--our transaction will rollback
+- Our ExecuteQuery method will accept some SQL alongside a mapping function to convert a result set into the type we specify.
 
 Now, we can now reuse this base class throughout our entire application.
 
@@ -145,7 +145,7 @@ public class CustomerRepository : BaseRepository
         return await ExecuteQuery(
             "SELECT * FROM dbo.Customer",
             reader => new Customer(
-                    reader.GetGuid(0), 
+                    reader.GetGuid(0),
                     reader.GetString(1)));
     }
 }
@@ -162,7 +162,7 @@ Our customer repository would now become:
 ```csharp
 public class CustomerRepository : BaseRepository
 {
-    private readonly Func<DbDataReader, Customer> _customerFunc = reader => 
+    private readonly Func<DbDataReader, Customer> _customerFunc = reader =>
         new Customer(
         reader.GetGuid(0),
         reader.GetString(1));

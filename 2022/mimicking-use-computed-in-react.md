@@ -22,7 +22,7 @@ const [last, setLast] = useState<string>("");
 const [full, setFull] = useState<string>("");
 
 useEffect(() => {
-    setFull(first + last);
+  setFull(first + last);
 }, [first, last]);
 ```
 
@@ -49,18 +49,18 @@ export default function useComputed<T>(initialState: T, callback: () => T): T {
 And here is how we use it:
 
 ```typescript
-  const [first, setFirst] = useState<string>("");
-  const [last, setLast] = useState<string>("");
-  
-  const fullName = useComputed(
-    "",
-    useCallback(() => first + last, [first, last])
-  );
+const [first, setFirst] = useState<string>("");
+const [last, setLast] = useState<string>("");
+
+const fullName = useComputed(
+  "",
+  useCallback(() => first + last, [first, last]),
+);
 ```
 
 Unlike our Vue counterpart we need to have a few extras:
 
 - Our state variable needs to be provided with an initial value.
-- Our function *must* be wrapped in a useCallback; if we omit this it will cause an infinite loop.
+- Our function _must_ be wrapped in a useCallback; if we omit this it will cause an infinite loop.
 
 Our end result allows us to remove some of the ceremony around create two separate hooks and wiring them together. As long as we remember to wrap our function in a useCallback hook, the result is a net positive.

@@ -12,8 +12,8 @@ A quick fix is to double-check that "strict" mode is enabled in your ts config.
 {
   "compilerOptions": {
     // Lots of extra junk
-    "strict": true,
-  },
+    "strict": true
+  }
 }
 ```
 

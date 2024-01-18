@@ -12,9 +12,9 @@ One of the biggest danger zones developers face is the option to use the 'any' t
 
 The use of 'any' will metastasize if you allow it to proliferate in an application. You must be proactive with your approach, including but not limited to:
 
-* Enabling [strict mode](https://www.typescriptlang.org/tsconfig#strict) in your tsconfig
-* Forcing the [no-explicit-any](https://typescript-eslint.io/rules/no-explicit-any/) to an error
-* Avoiding third-party libraries that have excessive use of 'any' in function calls or interfaces
+- Enabling [strict mode](https://www.typescriptlang.org/tsconfig#strict) in your tsconfig
+- Forcing the [no-explicit-any](https://typescript-eslint.io/rules/no-explicit-any/) to an error
+- Avoiding third-party libraries that have excessive use of 'any' in function calls or interfaces
 
 If you still want to use the 'any' type, don't use TypeScript. The usage defeats the purpose of enabling type checking in the first place.
 
@@ -26,9 +26,9 @@ Unfortunately it's not just the 'any' type that we should avoid. Both 'never' an
 
 If you are not already using ESLint, [you should be](https://michaelbradvica.com/two-npm-packages-for-every-frontend-project). Buy yourself even more insurance for your project by using the following built-in configurations:
 
-* [Required Type Checking](https://typescript-eslint.io/docs/linting/configs#recommended-requiring-type-checking)
-* [Strict Rule Set](https://typescript-eslint.io/docs/linting/configs#strict)
-  
+- [Required Type Checking](https://typescript-eslint.io/docs/linting/configs#recommended-requiring-type-checking)
+- [Strict Rule Set](https://typescript-eslint.io/docs/linting/configs#strict)
+
 These two extra configurations will enable more typed rules to help avoid unnecessary and costly bugs.
 
 Choosing TypeScript is just one step in moving to a better development environment. Adding TypeScript to your application is not enough. You must retain a fervent dedication to the idea of strict types in your application.
