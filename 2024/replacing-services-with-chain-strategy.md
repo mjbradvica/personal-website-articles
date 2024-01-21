@@ -60,7 +60,7 @@ Multiple services have lots of hidden costs outside of excessive mocking for uni
 
 ## A Clear Alternative
 
-[ChainStrategy](https://github.com/mjbradvica/ChainStrategy) gives you a much more practical approach using a Chain of Responsibility to solve the issue of breaking apart a large problem.
+[ChainStrategy](https://github.com/mjbradvica/ChainStrategy) gives you a much more practical approach using the Chain of Responsibility pattern to solve the issue of breaking apart a large problem.
 
 ### Clearly Defined Entry and Egress
 
