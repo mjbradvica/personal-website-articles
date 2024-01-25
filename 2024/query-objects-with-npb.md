@@ -56,16 +56,16 @@ Implement like so:
 
 ```csharp
 public async Task<List<Widget>> SearchEntities(IBaseQuery<Widget> query, IBaseOrder<Widget>? order = null)
+{
+    var result = _context.Widgets.NPredicateBuilderEFWhere(query);
+
+    if (order != null)
     {
-        var result = _context.Widgets.NPredicateBuilderEFWhere(query);
-
-        if (order != null)
-        {
-            result.NPredicateBuilderEFOrder(order);
-        }
-
-        return await result.ToListAsync();
+        result.NPredicateBuilderEFOrder(order);
     }
+
+    return await result.ToListAsync();
+}
 ```
 
 Because NPredicateBuilder has extensions for EF, the query isn't executed until the last line, preserving performance.
