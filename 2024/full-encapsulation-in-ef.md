@@ -83,6 +83,8 @@ The first constructor is used by EF, the second is used by us when we are creati
 
 > The "default!" is used to tell the compiler not to worry about the nullable aspect of the property.
 
+> You may also allocate each object with an "empty" version if you do not wish use the "default!" trick.
+
 Configuration for navigation and complex properties is done in the same fashion as primitives.
 
 ```csharp
