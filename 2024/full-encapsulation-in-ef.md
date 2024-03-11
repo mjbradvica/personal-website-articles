@@ -45,11 +45,11 @@ protected override void OnModelCreating(ModelBuilder modelBuilder)
 }
 ```
 
-Entity Framework will now pass these properties into the object using the constructor every time it needs to be instantiated.
+Entity Framework will now pass these properties into the object using the constructor whenever it needs to be instantiated.
 
 ## Encapsulating Navigation and Complex Properties
 
-Navigation and Complex properties are not passed via a constructor, but rather EF will use reflection to allocate these when desired. However, unlike previous versions, you don't require a private setter or empty constructor anymore.
+Navigation and Complex properties are not passed via a constructor, but rather EF will use reflection to allocate these when desired. However, unlike previous versions, you do not require a private setter or empty constructor anymore.
 
 ```csharp
 public class Airplane
@@ -79,11 +79,11 @@ public class Airplane
 }
 ```
 
-The first constructor is used by EF, the second is used by us when we are creating the object for the first time.
+The first constructor is used by EF; we use the second constructor when creating the object for the first time.
 
 > The "default!" is used to tell the compiler not to worry about the nullable aspect of the property.
 
-> You may also allocate each object with an "empty" version if you do not wish use the "default!" trick.
+You may also allocate each object with an "empty" version if you do not wish to use the "default!" trick.
 
 Configuration for navigation and complex properties is done in the same fashion as primitives.
 
@@ -139,4 +139,4 @@ public sealed class ApplicationContext : DbContext
 
 > Make sure to seal your context class to avoid the virtual call of "Database.EnsureCreated()" in a possible derived class.
 
-Enforcing full encapsulation in previous versions of Entity Framework was a tradeoff between good engineering and development velocity. With the latest version, you do not need to make that decision.
+Enforcing full encapsulation in previous versions of Entity Framework was a tradeoff between good engineering and development velocity. With the latest version, you do not need to make that compromise.
