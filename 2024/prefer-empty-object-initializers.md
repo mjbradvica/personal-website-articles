@@ -9,6 +9,8 @@ The following shows an Entity Framework entity "Airplane" that has a navigation 
 ```csharp
 public class Airplane
 {
+    // other fields and methods
+
     public AircraftType AircraftType { get; }
 }
 ```
@@ -31,11 +33,11 @@ public class Airplane
 }
 ```
 
-This is not an ideal situation because we are silencing the compiler.
+This is not an ideal situation because we are silencing the compiler. We are leaving our application in a possible situation of undefined behavior. Unit testing or running the application without the database will yield possible errors. We need to ensure that de-referencing the property in any situation will not throw exceptions.
 
 > You should adhere to a strict policy of putting the compiler first. Nothing, including you, is above it.
 
-Instead of using the "default!" trick, use an object that contains empty data to satisfy the compiler.
+Instead of using the "default!" trick, use an object that contains empty data to satisfy the compiler. This is a variant of the [null object pattern](https://en.wikipedia.org/wiki/Null_object_pattern). Using an empty object will use default values in place of real-life data.
 
 ```csharp
 public class AircraftType
