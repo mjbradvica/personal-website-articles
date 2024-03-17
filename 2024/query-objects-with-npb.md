@@ -18,7 +18,7 @@ A search expression may contain N number of Where clauses that comprise a full q
 
 ## Implementation
 
-Add a method to your data access interface like so:
+If you are using the standard pattern of a Repository for data access, you may add the following method below.
 
 ```csharp
 public Task<List<Widget>> SearchEntities(IBaseQuery<Widget> query);
@@ -61,7 +61,7 @@ public async Task<List<Widget>> SearchEntities(IBaseQuery<Widget> query, IBaseOr
 
     if (order != null)
     {
-        result.NPredicateBuilderEFOrder(order);
+        result = result.NPredicateBuilderEFOrder(order);
     }
 
     return await result.ToListAsync();
