@@ -21,7 +21,10 @@ A search expression may contain N number of Where clauses that comprise a full q
 If you are using the standard pattern of a Repository for data access, you may add the following method below.
 
 ```csharp
-public Task<List<Widget>> SearchEntities(IBaseQuery<Widget> query);
+public interface IWidgetRepository
+{
+    public Task<List<Widget>> SearchEntities(IBaseQuery<Widget> query);
+}
 ```
 
 > Widget is just a placeholder for the entity type you are using.
@@ -29,7 +32,7 @@ public Task<List<Widget>> SearchEntities(IBaseQuery<Widget> query);
 Use the built-in extension method to apply the query. The following shows an example of EntityFramework.
 
 ```csharp
-public class MyDataClass
+public class WidgetRepository
 {
     // Other code hidden for simplicity.
 
@@ -75,11 +78,12 @@ Because NPredicateBuilder has extensions for EF, the query isn't executed until 
 You can see the potential to squash numerous methods down into a single interface. The effect is even more dramatic if you have multiple queries that share Where and Order clauses.
 
 ```csharp
-public interface IWidgetData
+public interface IWidgetRepository
 {
     Widget? GetById(Guid id);
     List<Widget> ActiveWidgets();
     List<Widget> ClientWidgets(int clientId);
+    List<Widget> WidgetsByCategory(Category category);
     // Potentially more methods here.
 }
 ```
@@ -87,7 +91,7 @@ public interface IWidgetData
 After...
 
 ```csharp
-public interface IWidgetData
+public interface IWidgetRepository
 {
     List<Widget> SearchWidgets(IBaseQuery<Widget> query);
 }

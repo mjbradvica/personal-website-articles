@@ -4,7 +4,7 @@
 
 ## Overview
 
-[ChainStrategy](https://github.com/mjbradvica/ChainStrategy) is a fully-featured implementation of the [Chain of Responsibility](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern) and [Strategy](https://en.wikipedia.org/wiki/Strategy_pattern) patterns for dotnet. ChainStrategy allows you to focus on solving problems instead of boilerplate.
+[ChainStrategy](https://github.com/mjbradvica/ChainStrategy) is a fully-featured implementation of the [Chain of Responsibility](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern) and [Strategy](https://en.wikipedia.org/wiki/Strategy_pattern) patterns for dotnet. ChainStrategy allows you to focus on solving problems instead of fussing over boilerplate.
 
 Also included is:
 
@@ -67,7 +67,7 @@ public class MyChainHandler : ChainHandler<MyPayload>
     {
         // implement steps and update payload
         
-        return payload.
+        return payload;
     }
 }
 ```
@@ -105,11 +105,11 @@ public class MyService
 }
 ```
 
-Chains can be very powerful when utilized to their full potential. You may view the samples [here](https://github.com/mjbradvica/ChainStrategy/tree/master/samples/ChainStrategy.Samples).
+This is only a very small example of what chains can accomplish. The official documentation will show you the full power they offer. Samples for chains are available [here](https://github.com/mjbradvica/ChainStrategy/tree/master/samples/ChainStrategy.Samples).
 
 ## Strategy
 
-Strategies are best utilized when you have multiple implementations of the same algorithm or process. You can think of processing credit cards as one example of such a process.
+Strategies are best utilized when you have multiple implementations of the same algorithm or process. You can think of processing credit cards as one such example.
 
 Strategies use a request and response to push data up and down.
 
@@ -127,7 +127,7 @@ public class MyRequest : IStrategyRequest<MyResponse>
 }
 ```
 
-Similar to chain handlers, implement the appropriate interface and implement the required method.
+Similar to chain handlers, implement the appropriate interface and required method.
 
 ```csharp
 public class MyStrategyHandler : IStrategyHandler<MyRequest, MyResponse>
@@ -139,7 +139,7 @@ public class MyStrategyHandler : IStrategyHandler<MyRequest, MyResponse>
 }
 ```
 
-Creating a profile for a strategy is done in the same fashion.
+Creating a profile for a strategy is done in the same fashion with one caveat; adding a strategy handler requires a predicate to decide which handler will be chosen.
 
 ```csharp
 public class MyStrategyProfile : StrategyProfile<MyRequest, MyResponse>
