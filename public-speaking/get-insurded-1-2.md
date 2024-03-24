@@ -58,6 +58,20 @@ We write a unit test!
 
 And here it is. This is just the first of three unit tests that are required for this service. My function had three logical branches, one to check for a null entity, and the final status check at the end. But, I only have room here for one. So you get one. But just imagine I have two more here.
 
+I have written an "insurance policy" for the three possible situations in this function. One in case my entity was null, one if the update fails, and one on success.
+
+And because I have this in-code, I can exercise my policy whenever I want, as many times as I want, until my CPU finally decides the time has come to retire.
+
+## Diversify, diversify, diversify
+
+Just like in code, our insurance needs span a vast array of wants and needs. This is only a small sample of what we deal with personally. I'm sure we could go into inception levels of reinsurance and "insurance-like" products such as annuities and personal trusts.
+
+Life requires it one way or another.
+
+## Saliently
+
+1. Prioritize automated testing. 
+
 ## Shameless Plugs
 
 If you want to read more about what I do; I blog @ michaelbradvica.com
