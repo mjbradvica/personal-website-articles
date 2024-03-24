@@ -33,7 +33,7 @@ public class Airplane
 }
 ```
 
-This is not an ideal situation because we are silencing the compiler. We are leaving our application in a possible situation of undefined behavior. Unit testing or running the application without the database will yield possible errors. We need to ensure that de-referencing the property in any situation will not throw exceptions.
+This is not ideal due to silencing the compiler. We are leaving our application in a possible situation of undefined behavior. Unit testing or running the application without the database will yield possible errors. We need to ensure that de-referencing the property in any situation will not throw exceptions.
 
 > You should adhere to a strict policy of putting the compiler first. Nothing, including you, is above it.
 
@@ -64,3 +64,5 @@ public class Airplane
     public AircraftType AircraftType { get; }
 }
 ```
+
+Using empty objects over silencing the compiler will lead to more consistent behavior in your application. Warnings from the compiler are a stern indicator that a change is needed. It is of the utmost importance to listen to what your application is telling you. Transforming your code to be implementation agnostic is one way to future-proof yourself and others on your team from future headaches.
