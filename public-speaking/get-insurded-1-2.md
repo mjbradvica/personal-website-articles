@@ -8,15 +8,19 @@ Thanks for having me this evening, shout out to Brian and the rest of everyone w
 
 This talk is technically a part 1 of 2. Assuming that Brian doesn't hate me in the end--I'll do the second part at a future meetup.
 
-The name of this talk is, "Get Insured, Or Crash the Car", and yes, I will be asking you if you would like to buy an extended warranty for your vehicle today.
+The name of this talk is simply, "Get Insured", while I won't be talking about the extended warranty for your car this evening. I do want to keep the idea around insurance and what we use insurance for as the focal point for this conversation.
 
 Except in this case, the vehicle in question is your application or suite of applications your company maintains.
+
+Just a heads up, I don't intend this to be a lecture or only me talking. Feel free to raise your hand if you would like to share some insight or have a question.
 
 ## Personal
 
 Real quick, who am I?
 
-My name is Michael Bradvica, I'm a full-stack developer at the theme park here in town with the dolphins and animals. It's the one that starts with a "U".
+My name is Michael Bradvica, I'm a full-stack developer at the theme park here in town. We're the ones with the dolphins and animals.
+
+And the obligatory, these are my own personal thoughts, they don't necessarily reflect the opinions or thoughts of my employer.
 
 I'll save the shameless plugs for later on in the presentation when I can keep the slide up during Q&A.
 
@@ -32,9 +36,9 @@ Humans, even back in the "ooga-booga" days realized this. As _exaggerate_ far ba
 
 My favorite of which, is if you built someone a house and the big bad wolf blows it down, you as the builder, "get the chair".
 
-More importantly, there was one of the first instances of disaster relief. If you owned money on a load or working capital expense and something happened (act of god, injury, someone dies of dysentery) your debt was relieved or forgiven.
+More importantly, there was one of the first instances of disaster relief. If you owned money on a loan or working capital expense and something happened (act of god, injury, someone dies of dysentery) your debt was relieved or forgiven.
 
-As a shipping merchant, one could take out a load, and pay the lender an extra fee, and if someone happened to the shipment, the merchant was not personally liable. One of the first instances of maritime insurance.
+As a shipping merchant, one could take out a load, and pay the lender an extra fee, and if someone happened to the shipment such as the boat sank, mutiny, or pirate (and btw, pirate insurance is still a thing today) the merchant was not personally liable. One of the first instances of maritime insurance.
 
 ## Application Service
 
@@ -46,7 +50,7 @@ Side note, this is c-sharp, but I'm not here to talk about c-sharp. So just imag
 
 I have a small service, called "widget service" and we are taking in a request, modifying some internal fields, updating the persistence model, and returning if the operation was a success or not. Like I said, the code here doesn't matter. More importantly, it's what code _means_ to my organization that matters.
 
-So we as code shipping merchants, have our payload, the widget service. We need to ensure (with an E) that it gets the point A to point B without sinking, being abducted by pirates, or bis swallowed up by Poseidon himself.
+So we as code shipping merchants, have our payload, the widget service. We need to ensure (with an E) that it gets the point A to point B without sinking, being abducted by pirates, or being swallowed up by Poseidon himself.
 
 So what do we do? We need to make sure that the code I've written does what I think it will do.
 
@@ -74,6 +78,10 @@ Just a side note, when I refer to an End-To-End test I am talking about somethin
 
 Continuing, we as developers are primarily responsible for the left-hand side, and others in the organization are typically responsible for the right-hand side. This is more of a Venn diagram with a small degree of overlap. But I'm not here to split hairs over where those boundaries lie, and if your organization is having territory wars over testing boundaries, then I would say you have bigger problems on your hands than what I'm talking about here.
 
+And just like in real life, you can over-insure your application. Testing superfluous things, or worrying about line and statement coverage. You can easily under-insure, by missing key logical branches. Or just forgoing integration testing altogether.
+
+Just like knowing what your deductible needs to be, or how much collision coverage you require. Learning how and when to apply testing is a learned skill that takes time to perfect.
+
 ## Insurance Comes Before the Car
 
 ## Tests Come Before the Application
@@ -90,9 +98,27 @@ Let me clarify that, when I run this code, I will always use the same implementa
 
 We've talked ourselves out of absolute necessity that testing is more important than the application code it is testing. Due to us changing our application code to conform to the needs of the tests, our hierarchy is pretty clear. Testing dictates application code, not the other way around.
 
+## Cowboy Everything
+
+Now, I know what you're thinking. I gotta ship my stuff because my boss said so, and because his boss said so. And you do. You do need to ship something at the end of the day. However, I would say that just "shipping code" is not good long-term thinking on any project.
+
+Here is what is going to happen to any project that just "ships code". And I've seen this happen in real time on multiple occasions. You start something, everything goes well for a while. Then you miss a release, unexpected bugs pop up, or maybe you had an issue during a weekend. And over time, your code base becomes worse and worse to work with.
+
+Until your whole team decides, it's time for a rewrite. Where you just repeat the same mistakes you made last time.
+
+And if you ever reach a point where you are terrified of opening a solution or application because you know how bad it is, you've already lost at that point. That needs to be your "come to programming Jesus" moment when you or your team needs to realize what you did in the past and why that won't work going forward. And when you do, I will guarantee part of it is due to letting automated testing go to the wayside.
+
 ## Whole New Programming World
 
+Now, it's not all that terrible I promise you.
+
 Suddenly, when we put automated testing before the application code itself a whole new programming world opens up to us. We begin to realize, "Hey, I can't do that.", and "That's not going to work." a lot more than we did before.
+
+We start to see bad techniques such as public setters, private methods, and non-pure static methods as not acceptable anymore.
+
+Then we move onto more complex choices, black-hole service calls where you have Service A calling B, which in turn calls C becomes a lot more annoying when you have unit tests that now require five-plus mocks just to cover a single branch.
+
+Lastly, complex conditional logic such as large switch statements, and endless if-else blocks become a hindrance to our new worldview.
 
 ## Extends Beyond Just Code
 
