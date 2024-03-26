@@ -8,7 +8,7 @@ Thanks for having me this evening, shout out to Brian and the rest of everyone w
 
 This talk is technically a part 1 of 2. Assuming that Brian doesn't hate me in the end--I'll do the second part at a future meetup.
 
-The name of this talk is, "Get Insured, Or crash the Car", and yes, I will be asking you if you would like to buy an extended warranty for your vehicle today.
+The name of this talk is, "Get Insured, Or Crash the Car", and yes, I will be asking you if you would like to buy an extended warranty for your vehicle today.
 
 Except in this case, the vehicle in question is your application or suite of applications your company maintains.
 
@@ -16,9 +16,7 @@ Except in this case, the vehicle in question is your application or suite of app
 
 Real quick, who am I?
 
-My name is Michael Bradvica (my last name is Croatian in case you weren't wondering), I'm a full-stack developer at the theme here in town with the dolphins and animals. It's the one that starts with a "U".
-
-And below you can see the worthless pieces of paper that I hold.
+My name is Michael Bradvica, I'm a full-stack developer at the theme park here in town with the dolphins and animals. It's the one that starts with a "U".
 
 I'll save the shameless plugs for later on in the presentation when I can keep the slide up during Q&A.
 
@@ -66,16 +64,56 @@ And because I have this in-code, I can exercise my policy whenever I want, as ma
 
 Just like in code, our insurance needs span a vast array of wants and needs. This is only a small sample of what we deal with personally. I'm sure we could go into inception levels of reinsurance and "insurance-like" products such as annuities and personal trusts.
 
-Life requires it one way or another.
+Life requires it one way or another. And we all know this. At least I hope we all know this. We may not like it, but deep down inside of us, we all know that insurance is a mandatory part of life.
+
+## Developer Insurance
+
+Similar to the real-life products from the previous slide-we as developers have an array of insurance products available to us. The ones we are responsible for are Unit, Integration, and End-To-End.
+
+Just a side note, when I refer to an End-To-End test I am talking about something you would write in Cypress for Node or Playwright for dotnet or Java. These are used when you have some front-end framework that involves your router or needs to make an API. So I'm referring to that when I say, "End-To-End".
+
+Continuing, we as developers are primarily responsible for the left-hand side, and others in the organization are typically responsible for the right-hand side. This is more of a Venn diagram with a small degree of overlap. But I'm not here to split hairs over where those boundaries lie, and if your organization is having territory wars over testing boundaries, then I would say you have bigger problems on your hands than what I'm talking about here.
+
+## Insurance Comes Before the Car
+
+## Tests Come Before the Application
+
+## What's More Important
+
+Back again to some pseudo-code. Except, what I have here is the simplest example of constructor injection possible. And to remove any other thoughts from our heads, they have been aptly named IDependency, our interface. And Dependence, our class. And I'm sure we would all agree that yes, Dependency Injection is good. We should all use it.
+
+And why do we use it? After all, I'm only registering a single dependency for a single interface in my application, or at least I hope everyone here is.
+
+Because we need to be able to mock this dependency in our test code somewhere to prove my code does what I want it to. Even though I have no run-time use for the interface.
+
+Let me clarify that, when I run this code, I will always use the same implementation of this interface. Negating the requirement for the interface, at runtime. However, the interface is required in my code because I need to run tests against a different implementation.
+
+We've talked ourselves out of absolute necessity that testing is more important than the application code it is testing. Due to us changing our application code to conform to the needs of the tests, our hierarchy is pretty clear. Testing dictates application code, not the other way around.
+
+## Whole New Programming World
+
+Suddenly, when we put automated testing before the application code itself a whole new programming world opens up to us. We begin to realize, "Hey, I can't do that.", and "That's not going to work." a lot more than we did before.
+
+## Extends Beyond Just Code
+
+And this goes beyond just what our code is doing. We can take this idea of automated testing first, and apply it as an architecture-level principle. Suddenly, more things start to pop up. We need to abstract out our hard dependencies such as the database. We start to incorporate more design patterns such as Chain of Responsibility, and Observer. I can't just jump onto the latest and greatest trend anymore. And lastly, we start to evaluate libraries that no longer gel with our new outlook. Libraries that embrace dynamic over static-AutoMapper I'm looking at you.
+
+## One More
+
+And then what?
+
+Well, I'm going to need to run those tests. Every time I push a commit. Every time I open a PR. Every time I update my master branch.
+
+That sounds just like a DevOps pipeline. So I'll need one of those. And of course, since we all have the attention spans of a goldfish these days, I want those tests running snappy fast. Which means I need to make that pipeline optimized so I'm not wasting half my day to see if the indicator turned green to make sure everything is good.
+
+And all of this, all of these changes occurred, because I flipped my thinking. I said to myself, I don't care about my code. The code doesn't matter, only the tests do. I want the code, and I want it to do things. But those things are secondary, not primary.
 
 ## Saliently
 
-1. Prioritize automated testing. 
+1. Prioritize automated testing.
 
 ## Shameless Plugs
 
 If you want to read more about what I do; I blog @ michaelbradvica.com
 
 If you are a dotnet developer, I have a few libraries that I maintain from my GitHub. Most of these entail giving you a foundation in your back-end code. I have done all the dirty boilerplate for you, and you get to focus on more important things.
-
-
