@@ -18,7 +18,9 @@ Just a heads up, I don't intend this to be a lecture or only me talking. Feel fr
 
 Real quick, who am I?
 
-My name is Michael Bradvica, I'm a full-stack developer at the theme park here in town. We're the ones with the dolphins and animals.
+My name is Michael Bradvica, I'm one of the three Mike B's running around this place. Are the other two here today? Currently a full-stack developer at the theme park here in town. We're the ones with the dolphins and animals.
+
+Before that, I did a stint in the professional services industry, and in total, I've done full-stack dotnet development for about a decade now.
 
 And the obligatory, these are my own personal thoughts, they don't necessarily reflect the opinions or thoughts of my employer.
 
@@ -30,15 +32,17 @@ Does anyone here have any experience in insurance, risk management, or asset pro
 
 (No), ok, so what is the point of risk management? What is at the very core of its purpose?
 
-The protection against loss of assets, that, if lost, would result in a catastrophic loss of working capital, possibly destroy our cash flow, from which we may never recover. (So then what? We yolo the rest of our money into BitCoin and cross our fingers? That's not financial advice btw)
+The protection against loss of assets, that, if lost, would result in a catastrophic loss of working capital, possibly destroy our cash flow, from which we may never recover.
 
 Humans, even back in the "ooga-booga" days realized this. As _exaggerate_ far back as Hammurabi, thousands of years ago, rules and regulations were dictating the handling and outcomes of goods and property in the event of adverse conditions.
 
-My favorite of which, is if you built someone a house and the big bad wolf blows it down, you as the builder, "get the chair".
+My favorite of which, is if you built someone a house and it collapses due to your negligence, you as the builder were put to death.
 
 More importantly, there was one of the first instances of disaster relief. If you owned money on a loan or working capital expense and something happened (act of god, injury, someone dies of dysentery) your debt was relieved or forgiven.
 
-As a shipping merchant, one could take out a load, and pay the lender an extra fee, and if someone happened to the shipment such as the boat sank, mutiny, or pirate (and btw, pirate insurance is still a thing today) the merchant was not personally liable. One of the first instances of maritime insurance.
+As a shipping merchant, one could take out a load, and pay the lender an extra fee, and if someone happened to the shipment such as the boat sank, mutiny, or piracy (and btw, pirate insurance is still a thing today) the merchant was not personally liable. One of the first instances of maritime insurance.
+
+If you've been following the news as of yesterday, maritime insurance is paying off right now.
 
 ## Application Service
 
@@ -50,7 +54,7 @@ Side note, this is c-sharp, but I'm not here to talk about c-sharp. So just imag
 
 I have a small service, called "widget service" and we are taking in a request, modifying some internal fields, updating the persistence model, and returning if the operation was a success or not. Like I said, the code here doesn't matter. More importantly, it's what code _means_ to my organization that matters.
 
-So we as code shipping merchants, have our payload, the widget service. We need to ensure (with an E) that it gets the point A to point B without sinking, being abducted by pirates, or being swallowed up by Poseidon himself.
+So we as code shipping merchants, have our payload, the widget service. We need to ensure (with an E) that it gets from point A to point B without sinking, being abducted by pirates, or being swallowed up by Poseidon himself.
 
 So what do we do? We need to make sure that the code I've written does what I think it will do.
 
@@ -64,6 +68,8 @@ I have written an "insurance policy" for the three possible situations in this f
 
 And because I have this in-code, I can exercise my policy whenever I want, as many times as I want, until my CPU finally decides the time has come to retire.
 
+Writing tests, and not just tests, but automated tests is the best insurance that you as a developer can buy.
+
 ## Diversify, diversify, diversify
 
 Just like in code, our insurance needs span a vast array of wants and needs. This is only a small sample of what we deal with personally. I'm sure we could go into inception levels of reinsurance and "insurance-like" products such as annuities and personal trusts.
@@ -72,7 +78,7 @@ Life requires it one way or another. And we all know this. At least I hope we al
 
 ## Developer Insurance
 
-Similar to the real-life products from the previous slide-we as developers have an array of insurance products available to us. The ones we are responsible for are Unit, Integration, and End-To-End.
+Similar to the real-life products from the previous slide-we as developers have an array of insurance products available to us. The ones we are primarily responsible for are Unit, Integration, and End-To-End.
 
 Just a side note, when I refer to an End-To-End test I am talking about something you would write in Cypress for Node or Playwright for dotnet or Java. These are used when you have some front-end framework that involves your router or needs to make an API. So I'm referring to that when I say, "End-To-End".
 
@@ -82,9 +88,23 @@ And just like in real life, you can over-insure your application. Testing superf
 
 Just like knowing what your deductible needs to be, or how much collision coverage you require. Learning how and when to apply testing is a learned skill that takes time to perfect.
 
-## Insurance Comes Before the Car
+I know we have a pretty good range of experience here, so if all of this is new to you; don't fret.
 
-## Tests Come Before the Application
+## Priorities
+
+So, we need a car to drive to work in and we need a home or apartment to live in.
+
+What do we need to show proof of before we can buy or rent either of those?
+
+We need insurance. So what's more important? The car, or the car insurance?
+
+To me the car has a dependency on the insurance, so the insurance is more important. It's not the most pertinent, but it is more important.
+
+I know everyone here is not like 25% of the people in this state who drive around without car insurance. If I told you to drive a week without insurance, would you do it?
+
+Probably not, because all the possible scenarios are going through your head right now of what could happen.
+
+Why do we throw all this rational thinking out the door when it comes to software?
 
 ## What's More Important
 
@@ -108,11 +128,21 @@ Until your whole team decides, it's time for a rewrite. Where you just repeat th
 
 And if you ever reach a point where you are terrified of opening a solution or application because you know how bad it is, you've already lost at that point. That needs to be your "come to programming Jesus" moment when you or your team needs to realize what you did in the past and why that won't work going forward. And when you do, I will guarantee part of it is due to letting automated testing go to the wayside.
 
+## Long Term
+
+This is the range of emotions you will go through when you put automated testing first.
+
+My life sucks, my life sucks. I just want to write code.
+
+Oh this isn't so bad. Good thing that test back there saved my bacon on this change I made.
+
+And finally, you'll notice that life isn't so bad.
+
 ## Whole New Programming World
 
 Now, it's not all that terrible I promise you.
 
-Suddenly, when we put automated testing before the application code itself a whole new programming world opens up to us. We begin to realize, "Hey, I can't do that.", and "That's not going to work." a lot more than we did before.
+Suddenly, when we put automated testing before the application code itself a whole new programming world opens up to us. We begin to realize, "Hey, I can't do that.", and "That's not going to work anymore." a lot more than we did before.
 
 We start to see bad techniques such as public setters, private methods, and non-pure static methods as not acceptable anymore.
 
@@ -122,7 +152,11 @@ Lastly, complex conditional logic such as large switch statements, and endless i
 
 ## Extends Beyond Just Code
 
-And this goes beyond just what our code is doing. We can take this idea of automated testing first, and apply it as an architecture-level principle. Suddenly, more things start to pop up. We need to abstract out our hard dependencies such as the database. We start to incorporate more design patterns such as Chain of Responsibility, and Observer. I can't just jump onto the latest and greatest trend anymore. And lastly, we start to evaluate libraries that no longer gel with our new outlook. Libraries that embrace dynamic over static-AutoMapper I'm looking at you.
+And this goes beyond just what our code is doing. We can take this idea of automated testing first, and apply it as an architecture-level principle. Suddenly, more things start to pop up.
+
+We need to abstract out our hard dependencies such as the database. We start to incorporate more design patterns such as Chain of Responsibility, and Observer in order to shrink our dependencies.
+
+I can't just jump onto the latest and greatest trend anymore. And lastly, we start to evaluate libraries that no longer gel with our new outlook. Libraries that embrace dynamic over static-AutoMapper I'm looking at you.
 
 ## One More
 
@@ -137,9 +171,15 @@ And all of this, all of these changes occurred, because I flipped my thinking. I
 ## Saliently
 
 1. Prioritize automated testing.
+2. Let your automated tests dictate your code, not the other way around.
+3. And focus on (mostly) 100% branch coverage in the critical aspects of your code base.
 
 ## Shameless Plugs
 
+Saved the best for last, here is where you can find me.
+
 If you want to read more about what I do; I blog @ michaelbradvica.com
 
-If you are a dotnet developer, I have a few libraries that I maintain from my GitHub. Most of these entail giving you a foundation in your back-end code. I have done all the dirty boilerplate for you, and you get to focus on more important things.
+If you are a dotnet developer, I have a few libraries that I maintain from my GitHub. Most of these entail giving you a foundation in your back-end code. I have done all the dirty boilerplate for you, and you get to focus on more important things. And yes, they are all 100% tested.
+
+Any questions?
