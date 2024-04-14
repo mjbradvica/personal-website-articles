@@ -4,9 +4,9 @@ With the release of .NET 8 and EF 8, we now have the opportunity to incorporate 
 
 There are three main areas for encapsulation in EF:
 
-1) An entity's primitives
-2) An entity's navigation and complex properties
-3) The context class
+1. An entity's primitives
+2. An entity's navigation and complex properties
+3. The context class
 
 ## Encapsulating Primitives
 
@@ -58,8 +58,8 @@ public class Airplane
     {
         Id = id;
         Registration = registration;
-        Configuration = default!;
-        AircraftType = default!;
+        Configuration = Configuration.Empty();
+        AircraftType = AircraftType.Empty();
     }
 
     public Airplane(string registration, Configuration configuration, AircraftType aircraftType)
@@ -80,10 +80,6 @@ public class Airplane
 ```
 
 The first constructor is used by EF; we use the second constructor when creating the object for the first time.
-
-> The "default!" is used to tell the compiler not to worry about the nullable aspect of the property.
-
-You may also allocate each object with an "empty" version if you do not wish to use the "default!" trick.
 
 Configuration for navigation and complex properties is done in the same fashion as primitives.
 
