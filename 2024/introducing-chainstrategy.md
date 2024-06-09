@@ -10,7 +10,7 @@ Also included is:
 
 - Dependency Injection built-in
 - Cancellation Token support
-- Easily testable handlers
+- Built for easy unit testing
 
 ## Installation
 
@@ -36,7 +36,7 @@ public class Program
 }
 ```
 
-You may also pass params of Assemblies if you have multiple projects to register.
+> You may also pass params of Assemblies if you have multiple projects to register.
 
 ## Chain of Responsibility
 
@@ -148,6 +148,7 @@ public class MyStrategyProfile : StrategyProfile<MyRequest, MyResponse>
     {
         AddStrategy<MySecondHandler>(request => request.Value == 0);
         AddStrategy<MyFirstHandler>(request => request.Value > 10);
+        AddDefault<MyDefaultHandler>();
     }
 }
 ```
