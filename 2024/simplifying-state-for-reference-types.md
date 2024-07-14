@@ -36,7 +36,7 @@ newState.property.subProperty = "newValue";
 setState(newState);
 ```
 
-This method works, but it is ugly as it requires a sub-optimal way of producing a deep clone that must be hard-casted to the correct type.
+This method works, but it is ugly as it requires a suboptimal way of producing a deep clone that must be hard-casted to the correct type.
 
 ## Solution
 
@@ -78,7 +78,7 @@ export default function useDeepState<T>(
 }
 ```
 
-The [StructuredClone](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone) method is useable in most modern front-end frameworks to give developers a type-safe, native implementation of the deep clone algorithm. We have simply wrapped the method in a new hook that may be reused in our application.
+The [StructuredClone](https://developer.mozilla.org/en-US/docs/Web/API/structuredClone) method is usable in most modern front-end frameworks to give developers a type-safe, native implementation of the deep clone algorithm. We have simply wrapped the method in a new hook that may be reused in our application.
 
 > This new hook is only required for reference types. Primitives need not apply.
 
