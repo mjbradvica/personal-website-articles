@@ -12,7 +12,7 @@ state.property = "newValue";
 setState(state);
 ```
 
-The following code snippet does not do what you think it does. Because the "state" object is the same reference, the state hook or "ref" in Vue is unable to detect the change in the property.
+The following code snippet does **not** do what you think it does. Because the "state" object is the same reference, the state hook or "ref" in Vue is unable to detect the change in the property.
 
 The correct way to accomplish this state update is to perform a full deep clone of the state object.
 
@@ -41,6 +41,8 @@ This method works, but it is ugly as it requires a sub-optimal way of producing 
 ## Solution
 
 There is a built-in method in Node that natively provides deep clone capability without the code smells. We can wrap this method in a custom hook to give us consistent state updates without future headaches.
+
+> StructuredClone is a new addition to Node, so this method may not work for all projects.
 
 ```typescript
 import { useState } from "react";
@@ -81,3 +83,7 @@ The [StructuredClone](https://developer.mozilla.org/en-US/docs/Web/API/structure
 > This new hook is only required for reference types. Primitives need not apply.
 
 With this new implementation, you may update any state reference type by simply changing the property or field. No more custom cloning, JSON workarounds, or frustration.
+
+## Conclusion
+
+State fundamentals can be tricky in front-end frameworks. State for reference types has a few extra caveats that if not properly understood can lead to frustration and undefined behavior in applications. Having a consistent and reliable method for updating reference types via StructuredClone is one technique for reducing developer frustration and confusion.
