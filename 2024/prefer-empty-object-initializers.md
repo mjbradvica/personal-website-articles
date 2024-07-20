@@ -35,6 +35,15 @@ public class Airplane
 
 This is not ideal due to silencing the compiler. We are leaving our application in a possible situation of undefined behavior. Unit testing or running the application without the database will yield possible errors. We need to ensure that de-referencing the property in any situation will not throw exceptions.
 
+```csharp
+var airplane = new Airplane();
+
+// Null reference exception will occur.
+var aircraftType = airplane.AircraftType;
+```
+
+Putting null checks everywhere in your code is not an ideal situation either. Due to each null check requiring a unit test against it.
+
 > You should adhere to a strict policy of putting the compiler first. Nothing, including you, is above it.
 
 Instead of using the "default!" trick, use an object that contains empty data to satisfy the compiler. This is a variant of the [null object pattern](https://en.wikipedia.org/wiki/Null_object_pattern). Using an empty object will use default values in place of real-life data.
@@ -64,5 +73,7 @@ public class Airplane
     public AircraftType AircraftType { get; }
 }
 ```
+
+## Conclusion
 
 Using empty objects over silencing the compiler will lead to more consistent behavior in your application. Warnings from the compiler are a stern indicator that a change is needed. It is of the utmost importance to listen to what your application is telling you. Transforming your code to be implementation agnostic is one way to future-proof yourself and others on your team from future headaches.
