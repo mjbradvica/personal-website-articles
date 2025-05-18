@@ -5,6 +5,7 @@
     "davidanson.vscode-markdownlint",
     "streetsidesoftware.code-spell-checker",
     "pkief.material-icon-theme",
-    "znck.grammarly"
+    "znck.grammarly",
+    "ms-vscode.wordcount"
   ]
 }
