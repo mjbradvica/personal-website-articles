@@ -1,10 +1,6 @@
 # Return Enums As Objects
 
-When working with any presentation layer be it an REST API, MVC, or GraphQL app, you should always return the correct abstraction for the type you are working with.
-
-Enums are a notoriously bad abstraction to pass to clients because they, by default, lack the necessary details a client needs to discern them.
-
-API's by default through Open API clients such as Swagger or Scalar, are only aware of the values an enum has, not the meaning behind it.
+When working with any presentation layer be it an REST API, MVC, or GraphQL app, you should always return the correct abstraction for the type you are working with. Enums are a notoriously bad abstraction to pass to clients because they, by default, lack the necessary details a client needs to discern them. API's by default through Open API clients such as Swagger or Scalar, are only aware of the values an enum has, not the meaning behind it.
 
 So the following enum:
 
